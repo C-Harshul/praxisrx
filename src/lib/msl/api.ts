@@ -1,31 +1,16 @@
-/**
- * MSL data-access layer.
- *
- * Every read/write the UI performs goes through this module, so a future
- * backend job that writes newsletters/articles/citations into the database
- * needs no UI changes. All calls run as the signed-in doctor; row-level
- * security restricts results to their own data.
- */
-import { supabase } from "@/integrations/supabase/client";
-import type { Database, Json } from "@/integrations/supabase/types";
-
-export type Doctor = Database["public"]["Tables"]["doctors"]["Row"];
-export type DoctorProfileUpdate = Pick<
-  Database["public"]["Tables"]["doctors"]["Update"],
-  | "full_name"
-  | "years_in_practice"
-  | "practice_setting"
-  | "specialty"
-  | "cancer_types"
-  | "topics"
-  | "preferred_format"
-  | "frequency"
->;
-export type PatientMix = Database["public"]["Tables"]["patient_mix"]["Row"];
-export type Newsletter = Database["public"]["Tables"]["newsletters"]["Row"];
-export type Article = Database["public"]["Tables"]["articles"]["Row"];
-export type Citation = Database["public"]["Tables"]["citations"]["Row"];
-
+/** Browser data-access boundary. All active reads/writes go through the app server to Databricks. */
+import { appRequest, loginApp, logoutApp } from "./platform/browser";
+import type {
+  Doctor,
+  DoctorProfileUpdate,
+  Newsletter,
+  Article,
+  Citation,
+  ProfileJob,
+} from "./platform/types";
+import type { SyncSnapshot } from "./patient-sync/contract";
+export type { Doctor, DoctorProfileUpdate, Newsletter, Article, Citation } from "./platform/types";
+export type PatientMix = SyncSnapshot;
 export type AuditAction =
   | "onboarding_completed"
   | "profile_updated"
@@ -34,163 +19,99 @@ export type AuditAction =
   | "bookmark_added"
   | "bookmark_removed"
   | "article_opened";
-
-async function requireUserId(): Promise<string> {
-  const { data, error } = await supabase.auth.getUser();
-  if (error || !data.user) throw new Error("Not signed in");
-  return data.user.id;
-}
-
-function fail(error: { message: string } | null): asserts error is null {
-  if (error) throw new Error(error.message);
-}
-
-/* ---------- audit ---------- */
-
-export async function logAudit(action: AuditAction, details: Record<string, Json> = {}) {
-  const doctor = await requireUserId();
-  const { error } = await supabase.from("audit_log").insert({ doctor, action, details });
-  fail(error);
-}
-
-/* ---------- doctor ---------- */
-
-export async function fetchDoctor(): Promise<Doctor> {
-  const id = await requireUserId();
-  const { data, error } = await supabase.from("doctors").select("*").eq("id", id).maybeSingle();
-  fail(error);
-  if (data) return data;
-  const ins = await supabase.from("doctors").insert({ id }).select("*").single();
-  fail(ins.error);
-  return ins.data!;
-}
-
-export async function saveDoctorProfile(update: DoctorProfileUpdate) {
-  const id = await requireUserId();
-  const { error } = await supabase.from("doctors").update(update).eq("id", id);
-  fail(error);
-}
-
-export async function completeOnboarding(update: DoctorProfileUpdate) {
-  const id = await requireUserId();
-  const { error } = await supabase
-    .from("doctors")
-    .update({ ...update, onboarding_complete: true })
-    .eq("id", id);
-  fail(error);
-  await logAudit("onboarding_completed");
-}
-
-export async function updateProfile(update: DoctorProfileUpdate, step: number) {
-  await saveDoctorProfile(update);
-  await logAudit("profile_updated", { step });
-}
-
-/* ---------- patient data ---------- */
-
+export const logAudit = (action: AuditAction, details: Record<string, unknown> = {}) =>
+  appRequest("audit", { action, details });
+export const fetchDoctor = () => appRequest<Doctor>("doctor");
+export const fetchNewsletterStatus = () =>
+  appRequest<Awaited<ReturnType<typeof import("./newsletter/api.server").newsletterRead>>>(
+    "newsletter_status",
+  );
+export const setEmailSubscription = (subscribed: boolean) =>
+  appRequest("email_subscription", { subscribed });
+export const retryNewsletter = (id: string) => appRequest("newsletter_retry", { id });
+export const retryEmail = (id: string) => appRequest("email_retry", { id });
+export const saveDoctorProfile = (update: DoctorProfileUpdate) =>
+  appRequest("save_profile", { update });
+export const completeOnboarding = (update: DoctorProfileUpdate) =>
+  appRequest("complete_onboarding", { update });
+export const updateProfile = (update: DoctorProfileUpdate, step: number) =>
+  appRequest("update_profile", { update, step });
 export type LinkResult =
   | { found: false }
-  | { found: true; doctor_id_code: string; synced_at: string; aggregates: Record<string, number> };
-
-export async function linkPatientData(code: string, consent: boolean): Promise<LinkResult> {
-  const { data, error } = await supabase.rpc("link_patient_data", {
-    _code: code,
-    _consent: consent,
-  });
-  fail(error);
-  return data as unknown as LinkResult;
-}
-
-export async function unlinkPatientData() {
-  const { error } = await supabase.rpc("unlink_patient_data");
-  fail(error);
-}
-
+  | {
+      found: true;
+      doctor_id_code: string;
+      synced_at: string;
+      aggregates: Record<string, number | null>;
+    };
+export const linkPatientData = (code: string, consent: boolean) =>
+  appRequest<LinkResult>("link", { code, consent });
+export const unlinkPatientData = () => appRequest("unlink", {});
 export async function fetchPatientMix(code: string): Promise<PatientMix | null> {
-  const { data, error } = await supabase
-    .from("patient_mix")
-    .select("*")
-    .eq("doctor_id_code", code)
-    .maybeSingle();
-  fail(error);
-  return data;
+  const mix = await appRequest<PatientMix | null>("patient_mix");
+  return mix?.doctor_id_code === code ? mix : null;
 }
-
-/* ---------- newsletters & articles ---------- */
-
 export type NewsletterListItem = Newsletter & { article_count: number };
-
-export async function fetchNewsletters(): Promise<NewsletterListItem[]> {
-  const { data, error } = await supabase
-    .from("newsletters")
-    .select("*, articles(count)")
-    .order("sent_at", { ascending: false });
-  fail(error);
-  return (data ?? []).map(({ articles, ...n }) => ({
-    ...n,
-    article_count: (articles as unknown as { count: number }[])?.[0]?.count ?? 0,
-  }));
-}
-
-export async function fetchNewsletter(id: string) {
-  const { data, error } = await supabase
-    .from("newsletters")
-    .select("*, articles(*)")
-    .eq("id", id)
-    .order("position", { referencedTable: "articles", ascending: true })
-    .maybeSingle();
-  fail(error);
-  return data as (Newsletter & { articles: Article[] }) | null;
-}
-
+export const fetchNewsletters = () => appRequest<NewsletterListItem[]>("newsletters");
+export const fetchNewsletter = (id: string) =>
+  appRequest<(Newsletter & { articles: Article[] }) | null>("newsletter", undefined, "doctor", id);
 export type ArticleDetail = Article & {
   citations: Citation[];
   newsletters: Pick<Newsletter, "id" | "title" | "sent_at"> | null;
 };
-
-export async function fetchArticle(id: string): Promise<ArticleDetail | null> {
-  const { data, error } = await supabase
-    .from("articles")
-    .select("*, citations(*), newsletters(id, title, sent_at)")
-    .eq("id", id)
-    .order("number", { referencedTable: "citations", ascending: true })
-    .maybeSingle();
-  fail(error);
-  return data as ArticleDetail | null;
-}
-
-export async function recordArticleOpened(articleId: string) {
-  await logAudit("article_opened", { article: articleId });
-}
-
-/* ---------- bookmarks (audit rows are written by a database trigger) ---------- */
-
+export const fetchArticle = (id: string) =>
+  appRequest<ArticleDetail | null>("article", undefined, "doctor", id);
+export const recordArticleOpened = (id: string) => appRequest("article_opened", { id });
 export type BookmarkItem = {
   created_at: string;
   article: Article & { newsletters: Pick<Newsletter, "sent_at"> | null };
 };
-
-export async function fetchBookmarks(): Promise<BookmarkItem[]> {
-  const { data, error } = await supabase
-    .from("bookmarks")
-    .select("created_at, article:articles(*, newsletters(sent_at))")
-    .order("created_at", { ascending: false });
-  fail(error);
-  return ((data ?? []) as unknown as BookmarkItem[]).filter((b) => b.article);
+export const fetchBookmarks = () => appRequest<BookmarkItem[]>("bookmarks");
+export const addBookmark = (id: string) => appRequest("bookmark_add", { id });
+export const removeBookmark = (id: string) => appRequest("bookmark_remove", { id });
+export const fetchGeneratedProfile = () => appRequest<ProfileJob | null>("profile");
+export const confirmGeneratedProfile = (input: {
+  id: string;
+  focus: { cancer_type: string; topic: string }[];
+}) => appRequest("confirm_profile", input);
+export const retryGeneratedProfile = () => appRequest("retry_profile", {});
+async function hospitalRequest<T>(method: "GET" | "POST", input?: unknown): Promise<T> {
+  const response = await fetch("/api/hospital", {
+    method,
+    credentials: "same-origin",
+    cache: "no-store",
+    ...(method === "POST"
+      ? { headers: { "Content-Type": "application/json" }, body: JSON.stringify(input) }
+      : {}),
+  });
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.error ?? "Databricks hospital request failed.");
+  return result;
 }
+export const fetchHospitalDirectory = () =>
+  hospitalRequest<import("./hospital/contract").HospitalDirectory>("GET");
+export const syncHospitalContext = (input: import("./hospital/contract").HospitalSyncInput) =>
+  hospitalRequest<import("./hospital/contract").HospitalSyncReceipt>("POST", input);
+export const signInHospital = (email: string, password: string) =>
+  loginApp(email, password, "hospital");
+export const signOutHospital = () => logoutApp("hospital");
 
-export async function addBookmark(articleId: string) {
-  const doctor = await requireUserId();
-  const { error } = await supabase.from("bookmarks").insert({ doctor, article: articleId });
-  if (error && !error.message.includes("duplicate")) throw new Error(error.message);
-}
-
-export async function removeBookmark(articleId: string) {
-  const doctor = await requireUserId();
-  const { error } = await supabase
-    .from("bookmarks")
-    .delete()
-    .eq("doctor", doctor)
-    .eq("article", articleId);
-  fail(error);
+/** Isolated reviewer endpoint; never shares doctor/staff role claims or sessions. */
+export async function reviewRequest<T>(action: string, input: unknown = null): Promise<T> {
+  const response = await fetch("/api/review", {
+    method: "POST",
+    credentials: "same-origin",
+    cache: "no-store",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ action, input }),
+  });
+  const result = await response.json();
+  if (!response.ok) {
+    const error = new Error(result.error ?? "Review connection unavailable.") as Error & {
+      status: number;
+    };
+    error.status = response.status;
+    throw error;
+  }
+  return result as T;
 }

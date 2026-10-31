@@ -1,0 +1,11 @@
+{
+  "schema_version": "kb-release.v1",
+  "kind": "clinical",
+  "source_cutoff": "2026-10-30",
+  "payload_hash": "516715e9480d686b605cc36c8a7f55e09fba9b7247c2da781e7b7625ec116fe3",
+  "membership": [],
+  "validation": "passed-structural-and-review-gates",
+  "projection_status": "local-unpublished",
+  "invalidations_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "release_id": "kb-397404dd8e9883e092893f895a8c778fb67c7964aadf6734ab2b9b33500d2e72"
+}

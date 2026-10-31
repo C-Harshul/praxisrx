@@ -58,6 +58,7 @@ export function applicabilityLabel(percent: number | null | undefined): {
 export function orderedAggregates(aggregates: Record<string, unknown> | null | undefined) {
   if (!aggregates) return [] as { label: string; value: number }[];
   const entries = Object.entries(aggregates)
+    .filter(([, v]) => typeof v === "number")
     .map(([label, v]) => ({ label, value: Number(v) }))
     .filter((x) => Number.isFinite(x.value));
   const rank = (l: string) => {

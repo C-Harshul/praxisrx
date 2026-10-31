@@ -1,0 +1,33 @@
+{
+  "version": "app-options.2026-10-30",
+  "cancer_families": [
+    "Lung",
+    "Breast",
+    "Pancreas",
+    "Liver",
+    "Gastric",
+    "Colorectal",
+    "Other"
+  ],
+  "specialties": [
+    "Medical oncology",
+    "Radiation oncology",
+    "Surgical oncology",
+    "Other"
+  ],
+  "topics": [
+    "Targeted therapy",
+    "Immunotherapy",
+    "Antibody-drug conjugates",
+    "Chemotherapy",
+    "Clinical trials",
+    "Guidelines"
+  ],
+  "aliases": {
+    "NSCLC": "Lung",
+    "SCLC": "Lung",
+    "hepatocellular": "Liver",
+    "pancreatic": "Pancreas",
+    "melanoma": "Other"
+  }
+}

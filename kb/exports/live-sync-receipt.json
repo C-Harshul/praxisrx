@@ -1,0 +1,10 @@
+{
+  "verified_at": "2026-10-31T03:42:02.269Z",
+  "workspace_id": "7474660613250664",
+  "table": "workspace.msl_demo.kb_records",
+  "entity_count": 256,
+  "candidate_set_id": "candidate-set-f829c31368b1317b667a58c3bdedfcbd7c45bc69c18a07d1f37fe15eaff52a75",
+  "input_hash": "2becc104794f8d44f4cb0d186a0b7d0e6461109ce35603fc2871c0a3abbfde1a",
+  "status": "canonical-readback-verified",
+  "clinical_items_released": 0
+}

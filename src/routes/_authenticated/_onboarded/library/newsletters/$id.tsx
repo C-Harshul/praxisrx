@@ -10,9 +10,15 @@ export const Route = createFileRoute("/_authenticated/_onboarded/library/newslet
   head: () => ({
     meta: [
       { title: "Newsletter — MSL" },
-      { name: "description", content: "A personalised MSL research briefing with articles matched to your patients." },
+      {
+        name: "description",
+        content: "A personalised MSL research briefing with articles matched to your patients.",
+      },
       { property: "og:title", content: "Newsletter — MSL" },
-      { property: "og:description", content: "A personalised MSL research briefing with articles matched to your patients." },
+      {
+        property: "og:description",
+        content: "A personalised MSL research briefing with articles matched to your patients.",
+      },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -32,7 +38,10 @@ function NewsletterPage() {
 
   return (
     <div>
-      <Link to="/library" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
+      <Link
+        to="/library"
+        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
+      >
         <ArrowLeft className="h-4 w-4" /> Library
       </Link>
       <header className="mt-6 max-w-3xl">

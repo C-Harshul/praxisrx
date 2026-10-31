@@ -8,6 +8,34 @@
       "when": 1793410532692,
       "tag": "0000_migration",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793410532693,
+      "tag": "0001_doctor_profiling",
+      "breakpoints": false
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793410532694,
+      "tag": "0002_matching",
+      "breakpoints": false
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793410532695,
+      "tag": "0003_patient_sync",
+      "breakpoints": false
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793410532696,
+      "tag": "0004_hospital_portal",
+      "breakpoints": false
     }
   ]
 }

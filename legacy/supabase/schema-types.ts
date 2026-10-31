@@ -14,6 +14,19 @@ export type Database = {
   }
   public: {
     Tables: {
+      doctor_profile_jobs: {
+        Row: {
+          id: string; version: number; doctor: string; input: Json;
+          status: "queued" | "processing" | "succeeded" | "failed" | "superseded";
+          attempts: number; lease_token: string | null; started_at: string | null;
+          created_at: string; completed_at: string | null; confirmed_at: string | null;
+          reviewed_focus: Json | null; output: Json | null; error_code: string | null; model: string | null;
+          prompt_version: string | null; schema_version: string | null;
+        };
+        Insert: { doctor: string; input: Json };
+        Update: never;
+        Relationships: [];
+      }
       articles: {
         Row: {
           applicability_percent: number | null
@@ -265,6 +278,31 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      hospital_directory: { Args: Record<never, never>; Returns: Json };
+      hospital_sync_patient_context: { Args: { _payload: Json; _source_kind: string; _request_id: string; _expected_id: string | null }; Returns: Json };
+      read_patient_context: { Args: Record<never, never>; Returns: Json | null };
+      read_patient_sync_history: { Args: Record<never, never>; Returns: Json };
+      sync_patient_context: { Args: { _payload: Json; _consent: boolean; _source_kind: string; _request_id: string; _expected_id: string | null }; Returns: Json };
+      publish_matching_kb_release: { Args: { _payload: Json }; Returns: string };
+      enqueue_due_matching_jobs: { Args: Record<never, never>; Returns: number };
+      claim_matching_job: { Args: Record<never, never>; Returns: Json | null };
+      current_matching_input: { Args: { _doctor: string }; Returns: Json | null };
+      read_current_matching_result: { Args: { _id: string }; Returns: Json | null };
+      finish_matching_job: {
+        Args: { _id: string; _lease: string; _result: Json | null; _error: string | null; _matcher_version: string };
+        Returns: string;
+      };
+      claim_doctor_profile_job: {
+        Args: Record<never, never>;
+        Returns: Database["public"]["Tables"]["doctor_profile_jobs"]["Row"][];
+      };
+      finish_doctor_profile_job: {
+        Args: { _id: string; _lease: string; _output: Json | null; _error: string | null;
+          _model: string; _prompt_version: string; _schema_version: string };
+        Returns: string;
+      };
+      confirm_doctor_profile: { Args: { _id: string; _focus: Json }; Returns: undefined };
+      retry_doctor_profile: { Args: Record<never, never>; Returns: undefined };
       link_patient_data: {
         Args: { _code: string; _consent: boolean }
         Returns: Json

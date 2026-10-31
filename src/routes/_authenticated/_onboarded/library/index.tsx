@@ -6,6 +6,7 @@ import { bookmarksQuery, newslettersQuery } from "@/lib/msl/queries";
 import { ArticleCard } from "@/components/msl/ArticleCard";
 import { EmptyState, ErrorBlock, LoadingBlock } from "@/components/msl/States";
 import { cn } from "@/lib/utils";
+import { NewsletterDelivery } from "@/components/msl/NewsletterDelivery";
 
 export const Route = createFileRoute("/_authenticated/_onboarded/library/")({
   validateSearch: (s: Record<string, unknown>): { tab?: "all" | "bookmarked" } =>
@@ -15,7 +16,10 @@ export const Route = createFileRoute("/_authenticated/_onboarded/library/")({
       { title: "Library — MSL" },
       { name: "description", content: "Your MSL newsletters and bookmarked research articles." },
       { property: "og:title", content: "Library — MSL" },
-      { property: "og:description", content: "Your MSL newsletters and bookmarked research articles." },
+      {
+        property: "og:description",
+        content: "Your MSL newsletters and bookmarked research articles.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -34,6 +38,7 @@ function LibraryPage() {
   return (
     <div>
       <h1 className="text-3xl font-semibold sm:text-4xl">Library</h1>
+      <NewsletterDelivery />
       <div className="mt-8 flex gap-6 border-b" role="tablist">
         {tabs.map((t) => (
           <button
@@ -43,7 +48,9 @@ function LibraryPage() {
             onClick={() => navigate({ search: t.id === "all" ? {} : { tab: t.id } })}
             className={cn(
               "-mb-px border-b-2 pb-3 text-sm font-medium transition-colors",
-              tab === t.id ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground",
+              tab === t.id
+                ? "border-primary text-foreground"
+                : "border-transparent text-muted-foreground hover:text-foreground",
             )}
           >
             {t.label}
@@ -60,7 +67,12 @@ function AllNewsletters() {
   if (isLoading) return <LoadingBlock />;
   if (isError) return <ErrorBlock />;
   if (!data?.length)
-    return <EmptyState icon={<Inbox className="h-8 w-8" />}>No newsletters yet. Your first one arrives soon.</EmptyState>;
+    return (
+      <EmptyState icon={<Inbox className="h-8 w-8" />}>
+        No published newsletters yet. Preparation requires a confirmed profile and reviewed
+        evidence. Preview and delivery status appear above.
+      </EmptyState>
+    );
   return (
     <ul className="divide-y rounded-xl border">
       {data.map((n) => (
@@ -91,7 +103,8 @@ function Bookmarked() {
   const { data, isLoading, isError } = useQuery(bookmarksQuery);
   if (isLoading) return <LoadingBlock />;
   if (isError) return <ErrorBlock />;
-  if (!data?.length) return <EmptyState icon={<Bookmark className="h-8 w-8" />}>No bookmarks yet.</EmptyState>;
+  if (!data?.length)
+    return <EmptyState icon={<Bookmark className="h-8 w-8" />}>No bookmarks yet.</EmptyState>;
   return (
     <div className="grid gap-4">
       {data.map((b) => (

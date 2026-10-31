@@ -16,6 +16,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { GeneratedProfile } from "@/components/msl/GeneratedProfile";
 import { AggregateBars } from "@/components/msl/AggregateBars";
 import { LoadingBlock } from "@/components/msl/States";
 import { doctorQuery, patientMixQuery } from "@/lib/msl/queries";
@@ -74,6 +75,7 @@ function ProfilePage() {
       await unlinkPatientData();
       await qc.invalidateQueries({ queryKey: ["doctor"] });
       qc.removeQueries({ queryKey: ["patientMix"] });
+      await qc.invalidateQueries({ queryKey: ["generatedProfile"] });
       toast.success("Patient data unlinked");
     } catch {
       toast.error("We couldn't unlink your patient data. Please try again.");
@@ -180,6 +182,7 @@ function ProfilePage() {
           </section>
         )}
       </div>
+      <GeneratedProfile />
     </div>
   );
 }

@@ -11,7 +11,17 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:matching-db": "node scripts/check-matching.mjs",
+    "test:patient-sync-db": "node scripts/check-patient-sync.mjs",
+    "test:hospital-db": "node scripts/check-hospital-portal.mjs",
+    "test:legacy-profiling-db": "node scripts/check-doctor-profiling.mjs",
+    "workers": "npx --yes bun scripts/run-databricks-workers.ts",
+    "test:live-app": "npx --yes bun scripts/check-app-live.ts",
+    "preview:newsletter": "node --import tsx scripts/preview-newsletter.ts",
+    "workers:email": "node --env-file=.env.local --env-file-if-exists=.env.gmail.local --import tsx scripts/run-databricks-workers.ts",
+    "dev:email": "node --env-file=.env.local --env-file-if-exists=.env.gmail.local node_modules/vite/bin/vite.js dev",
+    "check:newsletter-scripts": "tsc --noEmit --project scripts/newsletter-tsconfig.json"
   },
   "overrides": {
     "rolldown": "1.2.1"
@@ -44,7 +54,6 @@
     "@radix-ui/react-toggle": "^1.1.10",
     "@radix-ui/react-toggle-group": "^1.1.11",
     "@radix-ui/react-tooltip": "^1.2.8",
-    "@supabase/supabase-js": "^2.118.0",
     "@tailwindcss/vite": "^4.2.1",
     "@tanstack/react-query": "^5.101.1",
     "@tanstack/react-router": "1.170.41",
@@ -72,6 +81,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.13",
     "@eslint/js": "^9.32.0",
     "@lovable.dev/vite-tanstack-config": "2.26.5",
     "@testing-library/jest-dom": "^6.6.0",

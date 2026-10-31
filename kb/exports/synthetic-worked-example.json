@@ -1,0 +1,368 @@
+{
+  "label": "LOCAL SYNTHETIC INTEGRATION ONLY; NO NEWSLETTER GENERATED",
+  "candidate": {
+    "id": "SYNTHETIC-ONLY-evidence",
+    "version": "4c6febb4be4123fea894074ae9306c313ce6148e674d40907064f3e961743894",
+    "title": "SYNTHETIC integration exercise; no clinical findings",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Surgical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Immunotherapy",
+      "Chemotherapy"
+    ],
+    "subtypes": [
+      "NSCLC"
+    ],
+    "study_ids": [
+      "SYNTHETIC-study"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "nsclc",
+      "definition_id": "eligibility-pmid-42934326",
+      "version": "definition.v1",
+      "inclusion": "Synthetic NSCLC cohort for contract verification only.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase 2",
+      "histology": "NSCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Synthetic fixture; no real sponsor.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "SYNTHETIC ONLY"
+    ],
+    "synthetic": true,
+    "claims": [
+      {
+        "id": "SYNTHETIC-claim",
+        "version": "4598726073a804107cec8a30b75307bc6ac1fdf5457d48d4f31be5c629ce37bd",
+        "claim_text": "This fictional source describes a synthetic integration exercise and contains no clinical findings.",
+        "source_id": "SYNTHETIC-source",
+        "source_version": "b3c2e454e439394ecf897944ce47dcd2137f4230cbc6ecedc9e8b66f17c48b14",
+        "supporting_passage": "This fictional source describes a synthetic integration exercise and contains no clinical findings.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "synthetic-fixture.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "a172e28aafc47aeecfcb42764e85529fba75b9db569c18e883cbac9943f7c40f"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "SYNTHETIC-source",
+        "version": "b3c2e454e439394ecf897944ce47dcd2137f4230cbc6ecedc9e8b66f17c48b14",
+        "title": "SYNTHETIC source",
+        "source_name": "Synthetic integration fixture",
+        "url": "https://example.org/synthetic-evidence",
+        "original_url": null,
+        "source_type": "journal",
+        "published_date": "2026-10-26",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "Synthetic fixture generated for tests",
+        "language": "eng",
+        "source_hash": "a172e28aafc47aeecfcb42764e85529fba75b9db569c18e883cbac9943f7c40f",
+        "supporting_passage": "This fictional source describes a synthetic integration exercise and contains no clinical findings.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {},
+        "study_ids": [
+          "SYNTHETIC-study"
+        ],
+        "connector": "synthetic-fixture.v1",
+        "acquisition_run": "SYNTHETIC",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "pmid": "SYNTHETIC",
+        "doi": null,
+        "pmcid": null
+      }
+    ]
+  },
+  "simulated_review": {
+    "id": "SYNTHETIC-review",
+    "item_id": "SYNTHETIC-ONLY-evidence",
+    "item_version": "4c6febb4be4123fea894074ae9306c313ce6148e674d40907064f3e961743894",
+    "decision": "approved",
+    "reviewer": "SYNTHETIC-fixture-reviewer",
+    "reviewed_at": "2026-10-30T12:00:00Z",
+    "human_attestation": true,
+    "scope": "claims-population-funding-limitations-regulatory-classification",
+    "note": "SIMULATED review for synthetic contract verification only; no real reviewer.",
+    "snapshot_hash": "bf93056db3d4bcebd64a8e8d62fcac46f59dd5836b07e98727fc868c464a03c9"
+  },
+  "release": {
+    "payload": {
+      "schema_version": "matching-kb.v1",
+      "items": [
+        {
+          "id": "SYNTHETIC-ONLY-evidence",
+          "version": "4c6febb4be4123fea894074ae9306c313ce6148e674d40907064f3e961743894",
+          "title": "SYNTHETIC integration exercise; no clinical findings",
+          "cancer_type": "Lung",
+          "topics": [
+            "Clinical trials",
+            "Immunotherapy",
+            "Chemotherapy"
+          ],
+          "population_id": "nsclc",
+          "eligibility_definition_id": "eligibility-pmid-42934326",
+          "eligibility_summary": "Synthetic NSCLC cohort for contract verification only.",
+          "status_flags": [
+            "SYNTHETIC ONLY"
+          ],
+          "funding": "Synthetic fixture; no real sponsor.",
+          "reviewed_by": "SYNTHETIC-fixture-reviewer",
+          "reviewed_at": "2026-10-30T12:00:00Z",
+          "claims": [
+            {
+              "id": "SYNTHETIC-claim",
+              "claim_text": "This fictional source describes a synthetic integration exercise and contains no clinical findings.",
+              "source_id": "SYNTHETIC-source",
+              "supporting_passage": "This fictional source describes a synthetic integration exercise and contains no clinical findings.",
+              "location": "Abstract; exact limited excerpt"
+            }
+          ],
+          "sources": [
+            {
+              "id": "SYNTHETIC-source",
+              "source_name": "Synthetic integration fixture",
+              "title": "SYNTHETIC source",
+              "url": "https://example.org/synthetic-evidence",
+              "published_date": "2026-10-26"
+            }
+          ]
+        }
+      ]
+    },
+    "manifest": {
+      "schema_version": "kb-release.v1",
+      "kind": "synthetic-integration-fixture",
+      "source_cutoff": "2026-10-30",
+      "payload_hash": "6389c63b0e769be6a0dc7a79d0359f7a635c155d960f799e8a77905b349ba92f",
+      "membership": [
+        {
+          "id": "SYNTHETIC-ONLY-evidence",
+          "version": "4c6febb4be4123fea894074ae9306c313ce6148e674d40907064f3e961743894",
+          "review_id": "SYNTHETIC-review",
+          "review_hash": "5d6dd6bd0968cf33ea8fa26905e16bac48d80c1b7d46b9723f665d25b486d085",
+          "source_versions": [
+            {
+              "id": "SYNTHETIC-source",
+              "version": "b3c2e454e439394ecf897944ce47dcd2137f4230cbc6ecedc9e8b66f17c48b14",
+              "content_hash": "a172e28aafc47aeecfcb42764e85529fba75b9db569c18e883cbac9943f7c40f"
+            }
+          ],
+          "claim_versions": [
+            {
+              "id": "SYNTHETIC-claim",
+              "version": "4598726073a804107cec8a30b75307bc6ac1fdf5457d48d4f31be5c629ce37bd"
+            }
+          ]
+        }
+      ],
+      "validation": "passed-structural-and-review-gates",
+      "projection_status": "local-unpublished",
+      "invalidations_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "release_id": "kb-35b364f9dbc548e653721574b5dcb3a359028fff6c8eeff4598b6e0524e8ce46"
+    }
+  },
+  "matching_input": {
+    "profile": {
+      "id": "00000000-0000-4000-8000-000000000001",
+      "version": 1,
+      "schema_version": "doctor-profile.v1",
+      "prompt_version": "SYNTHETIC",
+      "model": "SYNTHETIC",
+      "stated": {
+        "years_in_practice": 5,
+        "practice_setting": "Academic hospital",
+        "specialty": "Medical oncology",
+        "cancer_types": [
+          "Lung"
+        ],
+        "topics": [
+          "Clinical trials"
+        ],
+        "preferred_format": "Written",
+        "frequency": "Weekly"
+      },
+      "reviewed_focus": []
+    },
+    "patient_mix": {
+      "synced_at": "2026-10-30T12:00:00Z",
+      "aggregates": {
+        "NSCLC": 60
+      }
+    },
+    "delivered_item_ids": []
+  },
+  "matching_result": {
+    "matcher_version": "matching.v1",
+    "matches": [
+      {
+        "item_id": "SYNTHETIC-ONLY-evidence",
+        "item_version": "4c6febb4be4123fea894074ae9306c313ce6148e674d40907064f3e961743894",
+        "population_id": "nsclc",
+        "applicability_percent": null,
+        "cohort_percent": 60,
+        "applicability_kind": "cohort_only",
+        "score": 6002,
+        "topic_match": [
+          "Clinical trials"
+        ],
+        "reasons": [
+          "selected_cancer_type",
+          "potentially_relevant_cohort",
+          "topic:Clinical trials"
+        ],
+        "evidence": {
+          "id": "SYNTHETIC-ONLY-evidence",
+          "version": "4c6febb4be4123fea894074ae9306c313ce6148e674d40907064f3e961743894",
+          "title": "SYNTHETIC integration exercise; no clinical findings",
+          "cancer_type": "Lung",
+          "topics": [
+            "Clinical trials",
+            "Immunotherapy",
+            "Chemotherapy"
+          ],
+          "population_id": "nsclc",
+          "eligibility_definition_id": "eligibility-pmid-42934326",
+          "eligibility_summary": "Synthetic NSCLC cohort for contract verification only.",
+          "status_flags": [
+            "SYNTHETIC ONLY"
+          ],
+          "funding": "Synthetic fixture; no real sponsor.",
+          "reviewed_by": "SYNTHETIC-fixture-reviewer",
+          "reviewed_at": "2026-10-30T12:00:00Z",
+          "claims": [
+            {
+              "id": "SYNTHETIC-claim",
+              "claim_text": "This fictional source describes a synthetic integration exercise and contains no clinical findings.",
+              "source_id": "SYNTHETIC-source",
+              "supporting_passage": "This fictional source describes a synthetic integration exercise and contains no clinical findings.",
+              "location": "Abstract; exact limited excerpt"
+            }
+          ],
+          "sources": [
+            {
+              "id": "SYNTHETIC-source",
+              "source_name": "Synthetic integration fixture",
+              "title": "SYNTHETIC source",
+              "url": "https://example.org/synthetic-evidence",
+              "published_date": "2026-10-26"
+            }
+          ]
+        }
+      }
+    ],
+    "excluded": []
+  },
+  "newsletter_input": {
+    "selected_evidence": [
+      {
+        "id": "SYNTHETIC-ONLY-evidence",
+        "version": "4c6febb4be4123fea894074ae9306c313ce6148e674d40907064f3e961743894",
+        "title": "SYNTHETIC integration exercise; no clinical findings",
+        "cancer_type": "Lung",
+        "topics": [
+          "Clinical trials",
+          "Immunotherapy",
+          "Chemotherapy"
+        ],
+        "population_id": "nsclc",
+        "eligibility_definition_id": "eligibility-pmid-42934326",
+        "eligibility_summary": "Synthetic NSCLC cohort for contract verification only.",
+        "status_flags": [
+          "SYNTHETIC ONLY"
+        ],
+        "funding": "Synthetic fixture; no real sponsor.",
+        "reviewed_by": "SYNTHETIC-fixture-reviewer",
+        "reviewed_at": "2026-10-30T12:00:00Z",
+        "claims": [
+          {
+            "id": "SYNTHETIC-claim",
+            "claim_text": "This fictional source describes a synthetic integration exercise and contains no clinical findings.",
+            "source_id": "SYNTHETIC-source",
+            "supporting_passage": "This fictional source describes a synthetic integration exercise and contains no clinical findings.",
+            "location": "Abstract; exact limited excerpt"
+          }
+        ],
+        "sources": [
+          {
+            "id": "SYNTHETIC-source",
+            "source_name": "Synthetic integration fixture",
+            "title": "SYNTHETIC source",
+            "url": "https://example.org/synthetic-evidence",
+            "published_date": "2026-10-26"
+          }
+        ]
+      }
+    ],
+    "deterministic_reasons": [
+      {
+        "item_id": "SYNTHETIC-ONLY-evidence",
+        "cohort_percent": 60,
+        "applicability_percent": null,
+        "reasons": [
+          "selected_cancer_type",
+          "potentially_relevant_cohort",
+          "topic:Clinical trials"
+        ]
+      }
+    ],
+    "clinical_text_policy": "Only supplied reviewed claims; deterministic cohort descriptions cite profile/snapshot provenance, never trial eligibility."
+  }
+}

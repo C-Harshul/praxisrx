@@ -1,0 +1,23 @@
+{
+  "mode": "synthetic fixture with verified live Databricks inference",
+  "clinical_publication": false,
+  "provider_calls": 0,
+  "email_sent": false,
+  "hosting": {
+    "hosting": "databricks",
+    "workspace_id": "7474660613250664",
+    "endpoint": "databricks-gpt-oss-20b",
+    "model_entity": "system.ai.gpt-oss-20b",
+    "config_version": 1,
+    "verified_at": "2026-10-31T04:53:29.561Z",
+    "hosting_policy_version": "databricks-hosted-only.v1",
+    "workload": "newsletter-exact-claim-selection.v1"
+  },
+  "usage": {
+    "prompt_tokens": 421,
+    "completion_tokens": 343,
+    "total_tokens": 764,
+    "cache_read_input_tokens": 0
+  },
+  "latency_ms": 2926
+}

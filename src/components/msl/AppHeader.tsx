@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { LogOut } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { logoutApp } from "@/lib/msl/platform/browser";
 import { Button } from "@/components/ui/button";
 import { Wordmark } from "./Wordmark";
 
@@ -15,7 +15,7 @@ export function AppHeader() {
   async function signOut() {
     await queryClient.cancelQueries();
     queryClient.clear();
-    await supabase.auth.signOut();
+    await logoutApp();
     navigate({ to: "/auth", replace: true });
   }
 

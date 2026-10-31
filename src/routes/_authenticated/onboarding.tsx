@@ -98,7 +98,7 @@ function OnboardingPage() {
   const [draft, setDraft] = useState<OnboardingDraft>(() => draftFrom(doctor));
   const [errors, setErrors] = useState<StepErrors>({});
   const [busy, setBusy] = useState(false);
-  const [linkPreview, setLinkPreview] = useState<Record<string, number> | null>(null);
+  const [linkPreview, setLinkPreview] = useState<Record<string, number | null> | null>(null);
   const [notFound, setNotFound] = useState(false);
   const { data: existingMix } = useQuery({
     ...patientMixQuery(doctor.patient_data_linked ? doctor.doctor_id_code : null),
