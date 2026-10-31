@@ -14,13 +14,266 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      articles: {
+        Row: {
+          applicability_percent: number | null
+          cancer_type: string
+          covers_text: string
+          full_summary: string
+          id: string
+          newsletter: string
+          not_covers_text: string
+          position: number
+          short_summary: string
+          title: string
+        }
+        Insert: {
+          applicability_percent?: number | null
+          cancer_type: string
+          covers_text?: string
+          full_summary?: string
+          id?: string
+          newsletter: string
+          not_covers_text?: string
+          position?: number
+          short_summary?: string
+          title: string
+        }
+        Update: {
+          applicability_percent?: number | null
+          cancer_type?: string
+          covers_text?: string
+          full_summary?: string
+          id?: string
+          newsletter?: string
+          not_covers_text?: string
+          position?: number
+          short_summary?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "articles_newsletter_fkey"
+            columns: ["newsletter"]
+            isOneToOne: false
+            referencedRelation: "newsletters"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      audit_log: {
+        Row: {
+          action: string
+          created_at: string
+          details: Json
+          doctor: string
+          id: string
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          details?: Json
+          doctor: string
+          id?: string
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          details?: Json
+          doctor?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      bookmarks: {
+        Row: {
+          article: string
+          created_at: string
+          doctor: string
+        }
+        Insert: {
+          article: string
+          created_at?: string
+          doctor: string
+        }
+        Update: {
+          article?: string
+          created_at?: string
+          doctor?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookmarks_article_fkey"
+            columns: ["article"]
+            isOneToOne: false
+            referencedRelation: "articles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "bookmarks_doctor_fkey"
+            columns: ["doctor"]
+            isOneToOne: false
+            referencedRelation: "doctors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      citations: {
+        Row: {
+          article: string
+          id: string
+          number: number
+          published_date: string | null
+          source_name: string
+          title: string
+          url: string
+        }
+        Insert: {
+          article: string
+          id?: string
+          number: number
+          published_date?: string | null
+          source_name: string
+          title: string
+          url: string
+        }
+        Update: {
+          article?: string
+          id?: string
+          number?: number
+          published_date?: string | null
+          source_name?: string
+          title?: string
+          url?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "citations_article_fkey"
+            columns: ["article"]
+            isOneToOne: false
+            referencedRelation: "articles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      doctors: {
+        Row: {
+          cancer_types: string[]
+          consent_given_at: string | null
+          created_at: string
+          doctor_id_code: string | null
+          frequency: string | null
+          full_name: string | null
+          id: string
+          onboarding_complete: boolean
+          patient_data_linked: boolean
+          practice_setting: string | null
+          preferred_format: string | null
+          specialty: string | null
+          topics: string[]
+          updated_at: string
+          years_in_practice: number | null
+        }
+        Insert: {
+          cancer_types?: string[]
+          consent_given_at?: string | null
+          created_at?: string
+          doctor_id_code?: string | null
+          frequency?: string | null
+          full_name?: string | null
+          id: string
+          onboarding_complete?: boolean
+          patient_data_linked?: boolean
+          practice_setting?: string | null
+          preferred_format?: string | null
+          specialty?: string | null
+          topics?: string[]
+          updated_at?: string
+          years_in_practice?: number | null
+        }
+        Update: {
+          cancer_types?: string[]
+          consent_given_at?: string | null
+          created_at?: string
+          doctor_id_code?: string | null
+          frequency?: string | null
+          full_name?: string | null
+          id?: string
+          onboarding_complete?: boolean
+          patient_data_linked?: boolean
+          practice_setting?: string | null
+          preferred_format?: string | null
+          specialty?: string | null
+          topics?: string[]
+          updated_at?: string
+          years_in_practice?: number | null
+        }
+        Relationships: []
+      }
+      newsletters: {
+        Row: {
+          doctor: string
+          id: string
+          sent_at: string
+          summary: string
+          title: string
+        }
+        Insert: {
+          doctor: string
+          id?: string
+          sent_at?: string
+          summary?: string
+          title: string
+        }
+        Update: {
+          doctor?: string
+          id?: string
+          sent_at?: string
+          summary?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "newsletters_doctor_fkey"
+            columns: ["doctor"]
+            isOneToOne: false
+            referencedRelation: "doctors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      patient_mix: {
+        Row: {
+          aggregates: Json
+          doctor_id_code: string
+          synced_at: string
+        }
+        Insert: {
+          aggregates?: Json
+          doctor_id_code: string
+          synced_at?: string
+        }
+        Update: {
+          aggregates?: Json
+          doctor_id_code?: string
+          synced_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      link_patient_data: {
+        Args: { _code: string; _consent: boolean }
+        Returns: Json
+      }
+      seed_sample_newsletter: {
+        Args: { _code: string; _doctor: string }
+        Returns: undefined
+      }
+      unlink_patient_data: { Args: never; Returns: undefined }
     }
     Enums: {
       [_ in never]: never
