@@ -15,7 +15,10 @@ export const Route = createFileRoute("/_authenticated/_onboarded/library/article
       { title: "Article — MSL" },
       { name: "description", content: "Research summary with coverage notes and full citations." },
       { property: "og:title", content: "Article — MSL" },
-      { property: "og:description", content: "Research summary with coverage notes and full citations." },
+      {
+        property: "og:description",
+        content: "Research summary with coverage notes and full citations.",
+      },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -33,7 +36,10 @@ function jumpTo(n: number) {
 }
 
 function CitedParagraphs({ text }: { text: string }) {
-  const paragraphs = text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+  const paragraphs = text
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(Boolean);
   return (
     <div className="space-y-4">
       {paragraphs.map((p, i) => (
@@ -92,7 +98,10 @@ function ArticlePage() {
           <ArrowLeft className="h-4 w-4" /> {data.newsletters.title}
         </Link>
       ) : (
-        <Link to="/library" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
+        <Link
+          to="/library"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
+        >
           <ArrowLeft className="h-4 w-4" /> Library
         </Link>
       )}
@@ -138,9 +147,22 @@ function ArticlePage() {
                 <p className="text-foreground">
                   <span className="font-medium">{c.source_name}</span> · {c.title}
                 </p>
+                {c.supporting_passage && (
+                  <blockquote className="mt-2 border-l-2 pl-3 text-muted-foreground">
+                    {c.supporting_passage}
+                    <span className="block text-xs">{c.location}</span>
+                  </blockquote>
+                )}
                 <p className="mt-1 flex flex-wrap items-center gap-x-3 text-muted-foreground">
-                  {c.published_date && <span>{format(new Date(c.published_date), "d MMM yyyy")}</span>}
-                  <a href={c.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">
+                  {c.published_date && (
+                    <span>{format(new Date(c.published_date), "d MMM yyyy")}</span>
+                  )}
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-primary hover:underline"
+                  >
                     Open source <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 </p>

@@ -1,0 +1,19 @@
+{
+  "doctor_id_code": "DR-1001",
+  "synced_at": "2026-10-30T09:00:00Z",
+  "panel_size": 180,
+  "min_cell_size": 5,
+  "aggregates": {
+    "NSCLC": 85,
+    "SCLC": 15,
+    "EGFR-mutant": 20,
+    "Post-osimertinib": 7,
+    "Post-osimertinib with MET alteration": 4,
+    "KRAS G12C": 12,
+    "ALK-positive": 4,
+    "PD-L1 ≥50%": 25,
+    "PD-L1 negative": 30,
+    "ES-SCLC after 1L chemo-IO": 10,
+    "Stage IV": 60
+  }
+}

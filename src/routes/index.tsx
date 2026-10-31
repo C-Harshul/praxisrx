@@ -1,5 +1,5 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
-import { supabase } from "@/integrations/supabase/client";
+import { getAppSession } from "@/lib/msl/platform/browser";
 import { LoadingBlock } from "@/components/msl/States";
 
 // Entry point: signed-out doctors go to sign-in; signed-in doctors go to the
@@ -23,8 +23,8 @@ export const Route = createFileRoute("/")({
     ],
   }),
   beforeLoad: async () => {
-    const { data } = await supabase.auth.getUser();
-    throw redirect({ to: data.user ? "/library" : "/auth" });
+    const user = await getAppSession();
+    throw redirect({ to: user ? "/library" : "/auth" });
   },
   component: () => <LoadingBlock />,
 });

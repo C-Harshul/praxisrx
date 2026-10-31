@@ -1,0 +1,2838 @@
+[
+  {
+    "id": "evidence-pmid-42934326",
+    "version": "cd14f9050f7a865b8551bf20188b2a3624dab0671188a00392db767efae7f4b5",
+    "title": "Neoadjuvant durvalumab plus chemotherapy in resectable or borderline resectable non-small-cell lung cancer: the phase 2 MDT-BRIDGE trial.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Surgical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Immunotherapy",
+      "Chemotherapy"
+    ],
+    "subtypes": [
+      "NSCLC"
+    ],
+    "study_ids": [
+      "NCT05925530"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "nsclc",
+      "definition_id": "eligibility-pmid-42934326",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Neoadjuvant durvalumab plus chemotherapy in resectable or borderline resectable non-small-cell lung cancer: the phase 2 MDT-BRIDGE trial.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase 2",
+      "histology": "NSCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42934326-abstract",
+        "version": "c7cb6c2e53ab7ff3e6d4913b6b204d4908ef1c12ab14e9ec9e90eacee358a9dc",
+        "claim_text": "Secondary endpoints included event-free survival, progression-free survival, pathological complete response rate (resectable patients cohort), circulating tumor DNA clearance between baseline and presurgery/pre-CRT and safety.",
+        "source_id": "pmid:42934326",
+        "source_version": "beb2de9586e2b090d2dc1e5b53333d6c1bf81ea05c09fcd557a82d9ee7ea252c",
+        "supporting_passage": "Secondary endpoints included event-free survival, progression-free survival, pathological complete response rate (resectable patients cohort), circulating tumor DNA clearance between baseline and presurgery/pre-CRT and safety.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "faa828e2232b7b7fb6ff9383b627c2a271d3cd972d43e8e76b6275dca67790e5"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42934326",
+        "version": "beb2de9586e2b090d2dc1e5b53333d6c1bf81ea05c09fcd557a82d9ee7ea252c",
+        "title": "Neoadjuvant durvalumab plus chemotherapy in resectable or borderline resectable non-small-cell lung cancer: the phase 2 MDT-BRIDGE trial.",
+        "source_name": "Nature medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42934326/",
+        "original_url": "https://doi.org/10.1038/s41591-026-04742-7",
+        "source_type": "journal",
+        "published_date": "2026-10-26",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "faa828e2232b7b7fb6ff9383b627c2a271d3cd972d43e8e76b6275dca67790e5",
+        "supporting_passage": "Secondary endpoints included event-free survival, progression-free survival, pathological complete response rate (resectable patients cohort), circulating tumor DNA clearance between baseline and presurgery/pre-CRT and safety.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1038/s41591-026-04742-7",
+          "pmid": "42934326"
+        },
+        "study_ids": [
+          "NCT05925530"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "pmid": "42934326",
+        "doi": "10.1038/s41591-026-04742-7",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42628840",
+    "version": "09e006d45df9e85057e9222a7ff0cd57874dcb74b6385f98d4338bf7bd12146c",
+    "title": "Five-Year Outcomes of Perioperative Pembrolizumab for Early-Stage Non-Small-Cell Lung Cancer From the Randomized KEYNOTE-671 Study.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Surgical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Immunotherapy"
+    ],
+    "subtypes": [
+      "NSCLC"
+    ],
+    "study_ids": [
+      "NCT03425643"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "nsclc",
+      "definition_id": "eligibility-pmid-42628840",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Five-Year Outcomes of Perioperative Pembrolizumab for Early-Stage Non-Small-Cell Lung Cancer From the Randomized KEYNOTE-671 Study.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": null,
+      "histology": "NSCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42628840-abstract",
+        "version": "f1e63699675a764bfd2362e0812a38dcdb654a8b05aa45dc5ee30656bb62ed29",
+        "claim_text": "Safety was consistent with the known profiles of each treatment.",
+        "source_id": "pmid:42628840",
+        "source_version": "1600ac2b8ce531a1ad7df6ea3da4fc813fcd097399ec861b7a7e4567973fe20e",
+        "supporting_passage": "Safety was consistent with the known profiles of each treatment.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "b0da2157e73aff542815bbcfe48239309e26321c7ea940a2068fca7a16efb599"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42628840",
+        "version": "1600ac2b8ce531a1ad7df6ea3da4fc813fcd097399ec861b7a7e4567973fe20e",
+        "title": "Five-Year Outcomes of Perioperative Pembrolizumab for Early-Stage Non-Small-Cell Lung Cancer From the Randomized KEYNOTE-671 Study.",
+        "source_name": "Annals of oncology : official journal of the European Society for Medical Oncology",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42628840/",
+        "original_url": "https://doi.org/10.1016/j.annonc.2026.08.005",
+        "source_type": "journal",
+        "published_date": "2026-08-21",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "b0da2157e73aff542815bbcfe48239309e26321c7ea940a2068fca7a16efb599",
+        "supporting_passage": "Safety was consistent with the known profiles of each treatment.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1016/j.annonc.2026.08.005",
+          "pmid": "42628840"
+        },
+        "study_ids": [
+          "NCT03425643"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "pmid": "42628840",
+        "doi": "10.1016/j.annonc.2026.08.005",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42830869",
+    "version": "c98067ae63fe824f6eeb7f0af057a844888d843ebaf07814d42984422adb97f6",
+    "title": "Envonalkib Versus Crizotinib in Treatment-Naive <i>ALK</i>-Positive Non-Small Cell Lung Cancer: Final Efficacy and Biomarker Analyses of the Randomized Phase III Study.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Targeted therapy"
+    ],
+    "subtypes": [
+      "NSCLC"
+    ],
+    "study_ids": [
+      "NCT04009317"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "alk-positive",
+      "definition_id": "eligibility-pmid-42830869",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Envonalkib Versus Crizotinib in Treatment-Naive <i>ALK</i>-Positive Non-Small Cell Lung Cancer: Final Efficacy and Biomarker Analyses of the Randomized Phase III Study.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase iii",
+      "histology": "NSCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42830869-abstract",
+        "version": "5f27de93fbbdf6d784755f060bc9dfb246c7731bfd95de3c36ce414d7cbac4b2",
+        "claim_text": "Biomarker analyses validate the prognostic impact of genomic co-alterations and delineate resistance mechanisms.",
+        "source_id": "pmid:42830869",
+        "source_version": "f86e78684e7d78aefa2826dd4a89c353f143e25372547c0f442ef5e0085e6807",
+        "supporting_passage": "Biomarker analyses validate the prognostic impact of genomic co-alterations and delineate resistance mechanisms.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "aedc6ceee3c217f7bf3f424d090d70e8b4cc98fe957cdb960975d66841230fe8"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42830869",
+        "version": "f86e78684e7d78aefa2826dd4a89c353f143e25372547c0f442ef5e0085e6807",
+        "title": "Envonalkib Versus Crizotinib in Treatment-Naive <i>ALK</i>-Positive Non-Small Cell Lung Cancer: Final Efficacy and Biomarker Analyses of the Randomized Phase III Study.",
+        "source_name": "MedComm",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42830869/",
+        "original_url": "https://doi.org/10.1002/mco2.70998",
+        "source_type": "journal",
+        "published_date": "2026-10-04",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "cc by",
+        "language": "eng",
+        "source_hash": "aedc6ceee3c217f7bf3f424d090d70e8b4cc98fe957cdb960975d66841230fe8",
+        "supporting_passage": "Biomarker analyses validate the prognostic impact of genomic co-alterations and delineate resistance mechanisms.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1002/mco2.70998",
+          "pmid": "42830869"
+        },
+        "study_ids": [
+          "NCT04009317"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "research-article",
+          "Journal Article"
+        ],
+        "pmid": "42830869",
+        "doi": "10.1002/mco2.70998",
+        "pmcid": "PMC13634175"
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42887497",
+    "version": "7f1634c3d8ec0bdbceeff9ab9c988d77b1af3363647573acb0a41a7b588a745f",
+    "title": "Firmonertinib in advanced non-small cell lung cancer with epidermal growth factor receptor P-loop and αC-helix compressing mutations.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Targeted therapy"
+    ],
+    "subtypes": [
+      "NSCLC"
+    ],
+    "study_ids": [
+      "NCT05364073"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "nsclc",
+      "definition_id": "eligibility-pmid-42887497",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Firmonertinib in advanced non-small cell lung cancer with epidermal growth factor receptor P-loop and αC-helix compressing mutations.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": null,
+      "histology": "NSCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42887497-abstract",
+        "version": "ee18fa09f5d25a654f0771c9e5f9b5373c57eea4aeb5facec7012bbbe3d9c41f",
+        "claim_text": "Results support further study of first-line firmonertinib in patients with EGFR PACC-mutant NSCLC.",
+        "source_id": "pmid:42887497",
+        "source_version": "f33ad747647962a78bce4c07f5adc80534cafa3bf41a587441542eab68f8b4cb",
+        "supporting_passage": "Results support further study of first-line firmonertinib in patients with EGFR PACC-mutant NSCLC.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "1e8701d5af0af7a5bba0ca2588950ff370beddacfbbebc224ec8482e17a5366a"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42887497",
+        "version": "f33ad747647962a78bce4c07f5adc80534cafa3bf41a587441542eab68f8b4cb",
+        "title": "Firmonertinib in advanced non-small cell lung cancer with epidermal growth factor receptor P-loop and αC-helix compressing mutations.",
+        "source_name": "Cancer cell",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42887497/",
+        "original_url": "https://doi.org/10.1016/j.ccell.2026.09.011",
+        "source_type": "journal",
+        "published_date": "2026-10-16",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "1e8701d5af0af7a5bba0ca2588950ff370beddacfbbebc224ec8482e17a5366a",
+        "supporting_passage": "Results support further study of first-line firmonertinib in patients with EGFR PACC-mutant NSCLC.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1016/j.ccell.2026.09.011",
+          "pmid": "42887497"
+        },
+        "study_ids": [
+          "NCT05364073"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "pmid": "42887497",
+        "doi": "10.1016/j.ccell.2026.09.011",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42955021",
+    "version": "d5b36414c415ddd2970f7cb4a8d95b6d65b950e7824a811c077841a0a247b16a",
+    "title": "Benmelstobart With or Without Anlotinib After Chemoradiotherapy for Unresectable Non-Small Cell Lung Cancer: The R-ALPS Randomized Clinical Trial.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Radiation oncology",
+      "Surgical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Immunotherapy",
+      "Targeted therapy"
+    ],
+    "subtypes": [
+      "NSCLC"
+    ],
+    "study_ids": [
+      "NCT04325763"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "nsclc",
+      "definition_id": "eligibility-pmid-42955021",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Benmelstobart With or Without Anlotinib After Chemoradiotherapy for Unresectable Non-Small Cell Lung Cancer: The R-ALPS Randomized Clinical Trial.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": null,
+      "histology": "NSCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42955021-abstract",
+        "version": "2b952e58fc126eadd1eda27a6a80acb777d2bceaede258b81ebedc9e8240c1e3",
+        "claim_text": "Adding anlotinib did not significantly improve PFS compared with benmelstobart alone and increased severe and fatal treatment-related adverse events.",
+        "source_id": "pmid:42955021",
+        "source_version": "061f088c151f415783f69d8c36d6794672e4ed1fe4ce186cfd52ffb945dc6532",
+        "supporting_passage": "Adding anlotinib did not significantly improve PFS compared with benmelstobart alone and increased severe and fatal treatment-related adverse events.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "1087fe763b8c61e29731ccaa26ab595030de245b3b2e67e02d3ddb3f7263c04f"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42955021",
+        "version": "061f088c151f415783f69d8c36d6794672e4ed1fe4ce186cfd52ffb945dc6532",
+        "title": "Benmelstobart With or Without Anlotinib After Chemoradiotherapy for Unresectable Non-Small Cell Lung Cancer: The R-ALPS Randomized Clinical Trial.",
+        "source_name": "JAMA oncology",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42955021/",
+        "original_url": "https://doi.org/10.1001/jamaoncol.2026.3918",
+        "source_type": "journal",
+        "published_date": "2026-10-29",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "1087fe763b8c61e29731ccaa26ab595030de245b3b2e67e02d3ddb3f7263c04f",
+        "supporting_passage": "Adding anlotinib did not significantly improve PFS compared with benmelstobart alone and increased severe and fatal treatment-related adverse events.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1001/jamaoncol.2026.3918",
+          "pmid": "42955021"
+        },
+        "study_ids": [
+          "NCT04325763"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "IM",
+          "Journal Article"
+        ],
+        "pmid": "42955021",
+        "doi": "10.1001/jamaoncol.2026.3918",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42918583",
+    "version": "f890735b9394449e013dce242aa4772d421d60c71936ec62995ed75977b0ef83",
+    "title": "PET-Guided Dose Escalation for Stage III Non-Small Cell Lung Cancer: A Randomized Clinical Trial.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology"
+    ],
+    "topics": [
+      "Clinical trials"
+    ],
+    "subtypes": [
+      "NSCLC"
+    ],
+    "study_ids": [
+      "unresolved-report:42918583"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "nsclc",
+      "definition_id": "eligibility-pmid-42918583",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: PET-Guided Dose Escalation for Stage III Non-Small Cell Lung Cancer: A Randomized Clinical Trial.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": null,
+      "histology": "NSCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42918583-abstract",
+        "version": "af23c866499c765c534a906f045a9a131904999223d69124df53971af0c6fe78",
+        "claim_text": "QOL did not differ between arms.",
+        "source_id": "pmid:42918583",
+        "source_version": "4b99742183221babb6a3ddc86698cf44090fea1cb1f7a6503be479c6bed0939b",
+        "supporting_passage": "QOL did not differ between arms.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "39a2edb1174e5ab37f5f684e9d8913ebae3ed477dee56f11d6b92ff2347d0b11"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42918583",
+        "version": "4b99742183221babb6a3ddc86698cf44090fea1cb1f7a6503be479c6bed0939b",
+        "title": "PET-Guided Dose Escalation for Stage III Non-Small Cell Lung Cancer: A Randomized Clinical Trial.",
+        "source_name": "International journal of radiation oncology, biology, physics",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42918583/",
+        "original_url": "https://doi.org/10.1016/j.ijrobp.2026.10.017",
+        "source_type": "journal",
+        "published_date": "2026-10-23",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "39a2edb1174e5ab37f5f684e9d8913ebae3ed477dee56f11d6b92ff2347d0b11",
+        "supporting_passage": "QOL did not differ between arms.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1016/j.ijrobp.2026.10.017",
+          "pmid": "42918583"
+        },
+        "study_ids": [],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "pmid": "42918583",
+        "doi": "10.1016/j.ijrobp.2026.10.017",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42636548",
+    "version": "af9aa4648e4a1ef4b6a61b4fdcf5c5b413c59c51c4c15d45c2b6f189cf318410",
+    "title": "Daily low-dose carboplatin or weekly carboplatin plus nab-paclitaxel for concurrent chemoradiotherapy in older patients with locally advanced non-small cell lung cancer (JCOG1914): A randomized phase 3 trial.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Radiation oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Chemotherapy"
+    ],
+    "subtypes": [
+      "NSCLC"
+    ],
+    "study_ids": [
+      "unresolved-report:42636548"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "nsclc",
+      "definition_id": "eligibility-pmid-42636548",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Daily low-dose carboplatin or weekly carboplatin plus nab-paclitaxel for concurrent chemoradiotherapy in older patients with locally advanced non-small cell lung cancer (JCOG1914): A randomized phase 3 trial.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase 3",
+      "histology": "NSCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42636548-abstract",
+        "version": "b5f6aa03d100035fe5fb88b5008558ee3365aef022b7dee80e50dad4410dae8d",
+        "claim_text": "Conclusions Daily low-dose carboplatin with concurrent thoracic radiotherapy remains the standard treatment for older patients with unresectable LA-NSCLC in Japan.",
+        "source_id": "pmid:42636548",
+        "source_version": "388623b4c3948e157ca79d6fe9c39f5e2166f3794c02b4a7b0f142723b7e8bfd",
+        "supporting_passage": "Conclusions Daily low-dose carboplatin with concurrent thoracic radiotherapy remains the standard treatment for older patients with unresectable LA-NSCLC in Japan.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "f98675d2fa7f72653acfdc0df0d837fca44ad93040e12f085a38bdbc35478655"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42636548",
+        "version": "388623b4c3948e157ca79d6fe9c39f5e2166f3794c02b4a7b0f142723b7e8bfd",
+        "title": "Daily low-dose carboplatin or weekly carboplatin plus nab-paclitaxel for concurrent chemoradiotherapy in older patients with locally advanced non-small cell lung cancer (JCOG1914): A randomized phase 3 trial.",
+        "source_name": "Lung cancer (Amsterdam, Netherlands)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42636548/",
+        "original_url": "https://doi.org/10.1016/j.lungcan.2026.109583",
+        "source_type": "journal",
+        "published_date": "2026-08-14",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "f98675d2fa7f72653acfdc0df0d837fca44ad93040e12f085a38bdbc35478655",
+        "supporting_passage": "Conclusions Daily low-dose carboplatin with concurrent thoracic radiotherapy remains the standard treatment for older patients with unresectable LA-NSCLC in Japan.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1016/j.lungcan.2026.109583",
+          "pmid": "42636548"
+        },
+        "study_ids": [],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Clinical Trial, Phase III",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Journal Article"
+        ],
+        "pmid": "42636548",
+        "doi": "10.1016/j.lungcan.2026.109583",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42692248",
+    "version": "6b5065423b595a362fb75238e57f412e226607604fde4d768eb8b46541873148",
+    "title": "Clinical outcomes by type of surgery with perioperative durvalumab in patients with resectable non-small cell lung cancer.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Surgical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Immunotherapy"
+    ],
+    "subtypes": [
+      "NSCLC"
+    ],
+    "study_ids": [
+      "NCT03800134"
+    ],
+    "evidence_type": "report/subgroup or update; verify design",
+    "population": {
+      "id": "nsclc",
+      "definition_id": "eligibility-pmid-42692248",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Clinical outcomes by type of surgery with perioperative durvalumab in patients with resectable non-small cell lung cancer.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": null,
+      "histology": "NSCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42692248-abstract",
+        "version": "22e8a3efb971c1ca74cd065b9dad8141f88b339ca88b5753687b015d7188ebf2",
+        "claim_text": "Conclusions Clinical benefit with perioperative durvalumab plus neoadjuvant chemotherapy versus neoadjuvant chemotherapy alone was generally maintained across the surgery subgroups.",
+        "source_id": "pmid:42692248",
+        "source_version": "1d548f8e9d9a42e48bf1b3efcec50d6bbe874ea25564e378edc2e09d37d159e0",
+        "supporting_passage": "Conclusions Clinical benefit with perioperative durvalumab plus neoadjuvant chemotherapy versus neoadjuvant chemotherapy alone was generally maintained across the surgery subgroups.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "6a4047ba8e2c9fb4b3cb65b408d78586d4a97eaaa7e01b73aafbaff279102e6a"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42692248",
+        "version": "1d548f8e9d9a42e48bf1b3efcec50d6bbe874ea25564e378edc2e09d37d159e0",
+        "title": "Clinical outcomes by type of surgery with perioperative durvalumab in patients with resectable non-small cell lung cancer.",
+        "source_name": "The Journal of thoracic and cardiovascular surgery",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42692248/",
+        "original_url": "https://doi.org/10.1016/j.jtcvs.2026.04.058",
+        "source_type": "journal",
+        "published_date": "2026-09-03",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "6a4047ba8e2c9fb4b3cb65b408d78586d4a97eaaa7e01b73aafbaff279102e6a",
+        "supporting_passage": "Conclusions Clinical benefit with perioperative durvalumab plus neoadjuvant chemotherapy versus neoadjuvant chemotherapy alone was generally maintained across the surgery subgroups.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1016/j.jtcvs.2026.04.058",
+          "pmid": "42692248"
+        },
+        "study_ids": [
+          "NCT03800134"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "pmid": "42692248",
+        "doi": "10.1016/j.jtcvs.2026.04.058",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42929702",
+    "version": "f42e0bb05fc7e43e237f65c98775c2a49d872d9397361e99170e342d3ab8f7f1",
+    "title": "Tarlatamab-Durvalumab Maintenance for Extensive-Stage Small-Cell Lung Cancer.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Immunotherapy"
+    ],
+    "subtypes": [
+      "SCLC"
+    ],
+    "study_ids": [
+      "NCT06211036"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "sclc",
+      "definition_id": "eligibility-pmid-42929702",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Tarlatamab-Durvalumab Maintenance for Extensive-Stage Small-Cell Lung Cancer.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": null,
+      "histology": "SCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42929702-abstract",
+        "version": "706d7faca21e8a278ff420a64e3d730df8e43d0b3e1c7f224d8a73807256d134",
+        "claim_text": "Overall survival and progression-free survival were assessed from randomization at the start of maintenance therapy as the primary and key secondary end points, respectively.",
+        "source_id": "pmid:42929702",
+        "source_version": "fa6c5d2ca41a7c00590f65fc62043548464e7d260367ffccc175a1d3ca41343b",
+        "supporting_passage": "Overall survival and progression-free survival were assessed from randomization at the start of maintenance therapy as the primary and key secondary end points, respectively.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "63ec7a0cccf6c271303687ba5e9c7857d65d06c92ccd1fcc12477d0629f64a15"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42929702",
+        "version": "fa6c5d2ca41a7c00590f65fc62043548464e7d260367ffccc175a1d3ca41343b",
+        "title": "Tarlatamab-Durvalumab Maintenance for Extensive-Stage Small-Cell Lung Cancer.",
+        "source_name": "The New England journal of medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42929702/",
+        "original_url": "https://doi.org/10.1056/nejmoa2609482",
+        "source_type": "journal",
+        "published_date": "2026-10-24",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "63ec7a0cccf6c271303687ba5e9c7857d65d06c92ccd1fcc12477d0629f64a15",
+        "supporting_passage": "Overall survival and progression-free survival were assessed from randomization at the start of maintenance therapy as the primary and key secondary end points, respectively.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1056/nejmoa2609482",
+          "pmid": "42929702"
+        },
+        "study_ids": [
+          "NCT06211036"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "pmid": "42929702",
+        "doi": "10.1056/nejmoa2609482",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42734213",
+    "version": "caa6a40231e285d01b608be381282beebb4802cf6113fb87ff55a9d79a52a22b",
+    "title": "Tambotatug Pelitecan in Small-Cell Lung Cancer after Platinum-Based Therapy.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Antibody-drug conjugates"
+    ],
+    "subtypes": [
+      "SCLC"
+    ],
+    "study_ids": [
+      "NCT06612151"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "sclc",
+      "definition_id": "eligibility-pmid-42734213",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Tambotatug Pelitecan in Small-Cell Lung Cancer after Platinum-Based Therapy.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": null,
+      "histology": "SCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42734213-abstract",
+        "version": "2063d44b3c9e1714903aeaf8eaeabfa5c648759ec50523a9fb58b9d33ddcd751",
+        "claim_text": "Here, we report the results from the prespecified interim analysis.",
+        "source_id": "pmid:42734213",
+        "source_version": "967ee68a513b406aaa9b74bcb31358a7f7e11a2e5d3437fb197ec3149d090125",
+        "supporting_passage": "Here, we report the results from the prespecified interim analysis.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "282b72846a8eb71d7f30659c7a3e4f6c942f9a0b48092d8b8f5c993d7ef3411c"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42734213",
+        "version": "967ee68a513b406aaa9b74bcb31358a7f7e11a2e5d3437fb197ec3149d090125",
+        "title": "Tambotatug Pelitecan in Small-Cell Lung Cancer after Platinum-Based Therapy.",
+        "source_name": "The New England journal of medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42734213/",
+        "original_url": "https://doi.org/10.1056/nejmoa2610229",
+        "source_type": "journal",
+        "published_date": "2026-09-12",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "282b72846a8eb71d7f30659c7a3e4f6c942f9a0b48092d8b8f5c993d7ef3411c",
+        "supporting_passage": "Here, we report the results from the prespecified interim analysis.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1056/nejmoa2610229",
+          "pmid": "42734213"
+        },
+        "study_ids": [
+          "NCT06612151"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Clinical Trial, Phase III",
+          "Comparative Study",
+          "Equivalence Trial",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Journal Article"
+        ],
+        "pmid": "42734213",
+        "doi": "10.1056/nejmoa2610229",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42679738",
+    "version": "a5168794030f370abb0717bb74878122749cdb7e3bcbad9515572e1bbd04940e",
+    "title": "Patient-reported outcomes with tarlatamab in extensive-stage small cell lung cancer after platinum-based chemotherapy: results from the phase 3 DeLLphi-304 trial.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Chemotherapy"
+    ],
+    "subtypes": [
+      "SCLC"
+    ],
+    "study_ids": [
+      "unresolved-report:42679738"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "sclc",
+      "definition_id": "eligibility-pmid-42679738",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Patient-reported outcomes with tarlatamab in extensive-stage small cell lung cancer after platinum-based chemotherapy: results from the phase 3 DeLLphi-304 trial.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase 3",
+      "histology": "SCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42679738-abstract",
+        "version": "9e672945fda94e41d0f4bddfe1fad4eccd83be586b7a6dd71b287c466f38ea98",
+        "claim_text": "These findings support a favorable benefit-risk profile of tarlatamab in patients previously treated for ES-SCLC.",
+        "source_id": "pmid:42679738",
+        "source_version": "d48dd328af218e34a576e3ef69ed94ac8a22405d5060d604193e269cee0c7668",
+        "supporting_passage": "These findings support a favorable benefit-risk profile of tarlatamab in patients previously treated for ES-SCLC.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "64f8450b40f2bbf1db95e800a9dc49b7f47f79a8bc3865a4a8d6fe51be8fcec8"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42679738",
+        "version": "d48dd328af218e34a576e3ef69ed94ac8a22405d5060d604193e269cee0c7668",
+        "title": "Patient-reported outcomes with tarlatamab in extensive-stage small cell lung cancer after platinum-based chemotherapy: results from the phase 3 DeLLphi-304 trial.",
+        "source_name": "Lung cancer (Amsterdam, Netherlands)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42679738/",
+        "original_url": "https://doi.org/10.1016/j.lungcan.2026.109581",
+        "source_type": "journal",
+        "published_date": "2026-08-13",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "cc by-nc-nd",
+        "language": "eng",
+        "source_hash": "64f8450b40f2bbf1db95e800a9dc49b7f47f79a8bc3865a4a8d6fe51be8fcec8",
+        "supporting_passage": "These findings support a favorable benefit-risk profile of tarlatamab in patients previously treated for ES-SCLC.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1016/j.lungcan.2026.109581",
+          "pmid": "42679738"
+        },
+        "study_ids": [],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Clinical Trial, Phase III",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Journal Article"
+        ],
+        "pmid": "42679738",
+        "doi": "10.1016/j.lungcan.2026.109581",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42823088",
+    "version": "3738fccc7ec6b3d6c71ddcde6de3036f08d20efed8b25a528c4d312c0e6d9514",
+    "title": "Toripalimab consolidation after chemoradiotherapy in limited-stage small cell lung cancer: a phase II, randomized controlled study (GASTO-1052A).",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Radiation oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Immunotherapy"
+    ],
+    "subtypes": [
+      "SCLC"
+    ],
+    "study_ids": [
+      "unresolved-report:42823088"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "sclc",
+      "definition_id": "eligibility-pmid-42823088",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Toripalimab consolidation after chemoradiotherapy in limited-stage small cell lung cancer: a phase II, randomized controlled study (GASTO-1052A).",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase ii",
+      "histology": "SCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42823088-abstract",
+        "version": "dac17e40983d408b4ada13fc38890134a7119e18d17525ccd3c2c1076e7158fa",
+        "claim_text": "These findings warrant confirmation in larger, adequately powered randomized trials.",
+        "source_id": "pmid:42823088",
+        "source_version": "79edd66566f7529392c208b08b62ab6582e3680d5abf741a4a2a855e540592dc",
+        "supporting_passage": "These findings warrant confirmation in larger, adequately powered randomized trials.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "2177710607c9b0f99d607a2bf93122199abc54f05ca4781cc9a0a461f27ca60e"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42823088",
+        "version": "79edd66566f7529392c208b08b62ab6582e3680d5abf741a4a2a855e540592dc",
+        "title": "Toripalimab consolidation after chemoradiotherapy in limited-stage small cell lung cancer: a phase II, randomized controlled study (GASTO-1052A).",
+        "source_name": "Journal for immunotherapy of cancer",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42823088/",
+        "original_url": "https://doi.org/10.1136/jitc-2026-016467",
+        "source_type": "journal",
+        "published_date": "2026-10-01",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "cc by-nc",
+        "language": "eng",
+        "source_hash": "2177710607c9b0f99d607a2bf93122199abc54f05ca4781cc9a0a461f27ca60e",
+        "supporting_passage": "These findings warrant confirmation in larger, adequately powered randomized trials.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1136/jitc-2026-016467",
+          "pmid": "42823088"
+        },
+        "study_ids": [],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Clinical Trial, Phase II",
+          "research-article",
+          "Randomized Controlled Trial",
+          "Journal Article"
+        ],
+        "pmid": "42823088",
+        "doi": "10.1136/jitc-2026-016467",
+        "pmcid": "PMC13629860"
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42869886",
+    "version": "651f53aff842eb8ad32784bb8b58a18e9d645c4cd030933914c19be15d81a0a3",
+    "title": "Camrelizumab plus chemotherapy as induction therapy followed by concurrent chemoradiotherapy and camrelizumab consolidation in limited-stage small cell lung cancer: a randomized phase II trial.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Radiation oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Immunotherapy",
+      "Chemotherapy"
+    ],
+    "subtypes": [
+      "SCLC"
+    ],
+    "study_ids": [
+      "unresolved-report:42869886"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "sclc",
+      "definition_id": "eligibility-pmid-42869886",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Camrelizumab plus chemotherapy as induction therapy followed by concurrent chemoradiotherapy and camrelizumab consolidation in limited-stage small cell lung cancer: a randomized phase II trial.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase ii",
+      "histology": "SCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42869886-abstract",
+        "version": "067026343c4fcd65a4dd500237cc0190d35d2fe4f2479d9e449264b1929cef1e",
+        "claim_text": "Secondary endpoints included objective response rate (ORR), PFS, overall survival (OS), and safety.",
+        "source_id": "pmid:42869886",
+        "source_version": "4f8262b2e9ef9b2234e9480fd5a9d761687d9b8d932dc7e8816be5963b081d75",
+        "supporting_passage": "Secondary endpoints included objective response rate (ORR), PFS, overall survival (OS), and safety.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "8fe548f9175a1e34c67c563341b08f8bf8736a7c40f177cec8982c46f2bd1dce"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42869886",
+        "version": "4f8262b2e9ef9b2234e9480fd5a9d761687d9b8d932dc7e8816be5963b081d75",
+        "title": "Camrelizumab plus chemotherapy as induction therapy followed by concurrent chemoradiotherapy and camrelizumab consolidation in limited-stage small cell lung cancer: a randomized phase II trial.",
+        "source_name": "Signal transduction and targeted therapy",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42869886/",
+        "original_url": "https://doi.org/10.1038/s41392-026-02984-y",
+        "source_type": "journal",
+        "published_date": "2026-10-14",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "cc by-nc-nd",
+        "language": "eng",
+        "source_hash": "8fe548f9175a1e34c67c563341b08f8bf8736a7c40f177cec8982c46f2bd1dce",
+        "supporting_passage": "Secondary endpoints included objective response rate (ORR), PFS, overall survival (OS), and safety.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1038/s41392-026-02984-y",
+          "pmid": "42869886"
+        },
+        "study_ids": [],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Clinical Trial, Phase II",
+          "Research Support, Non-U.S. Gov't",
+          "Randomized Controlled Trial",
+          "Journal Article"
+        ],
+        "pmid": "42869886",
+        "doi": "10.1038/s41392-026-02984-y",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42424047",
+    "version": "47454875e5e3c5d4e4752cdd15ab8f9a95af5581de682b51d0d95907510aa6a5",
+    "title": "Consolidative Thoracic Radiotherapy With Atezolizumab Maintenance in Extensive-Stage Small Cell Lung Cancer: The Phase 2 TREASURE Randomized Clinical Trial (AIO-TRK-0320).",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Radiation oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Immunotherapy"
+    ],
+    "subtypes": [
+      "SCLC"
+    ],
+    "study_ids": [
+      "NCT04462276"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "sclc",
+      "definition_id": "eligibility-pmid-42424047",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Consolidative Thoracic Radiotherapy With Atezolizumab Maintenance in Extensive-Stage Small Cell Lung Cancer: The Phase 2 TREASURE Randomized Clinical Trial (AIO-TRK-0320).",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase 2",
+      "histology": "SCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42424047-abstract",
+        "version": "516bf7f1ce690b0880a4dffdd91b968d4a1af2ec02a9edd5472e4b6a1116c09e",
+        "claim_text": "Cautious patient selection and further investigation to identify those who may benefit without undue risk are required.",
+        "source_id": "pmid:42424047",
+        "source_version": "847fa93dfb82bf94849d75662c0864e103bc387037b9f24f35eb744914d4bf4f",
+        "supporting_passage": "Cautious patient selection and further investigation to identify those who may benefit without undue risk are required.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "39f9c6947d95755b4cac989a1f2072ca2103e45e7ce8c07fe07d63fb6648b65c"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42424047",
+        "version": "847fa93dfb82bf94849d75662c0864e103bc387037b9f24f35eb744914d4bf4f",
+        "title": "Consolidative Thoracic Radiotherapy With Atezolizumab Maintenance in Extensive-Stage Small Cell Lung Cancer: The Phase 2 TREASURE Randomized Clinical Trial (AIO-TRK-0320).",
+        "source_name": "JAMA oncology",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42424047/",
+        "original_url": "https://doi.org/10.1001/jamaoncol.2026.2330",
+        "source_type": "journal",
+        "published_date": "2026-09-01",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "cc by-nc-nd",
+        "language": "eng",
+        "source_hash": "39f9c6947d95755b4cac989a1f2072ca2103e45e7ce8c07fe07d63fb6648b65c",
+        "supporting_passage": "Cautious patient selection and further investigation to identify those who may benefit without undue risk are required.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1001/jamaoncol.2026.2330",
+          "pmid": "42424047"
+        },
+        "study_ids": [
+          "NCT04462276"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Clinical Trial, Phase II",
+          "research-article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Journal Article"
+        ],
+        "pmid": "42424047",
+        "doi": "10.1001/jamaoncol.2026.2330",
+        "pmcid": "PMC13352179"
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42900351",
+    "version": "7a02b0f6a6cea9b23de185fad45e1c2a686a3bb869aa28c068caa2ca1ef04dd0",
+    "title": "Vibostolimab Coformulated with Pembrolizumab Plus Chemotherapy as First-Line Therapy for Extensive-Stage Small-Cell Lung Cancer.",
+    "cancer_families": [
+      "Lung"
+    ],
+    "specialties": [
+      "Medical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Immunotherapy",
+      "Chemotherapy"
+    ],
+    "subtypes": [
+      "SCLC"
+    ],
+    "study_ids": [
+      "NCT05224141"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": "sclc",
+      "definition_id": "eligibility-pmid-42900351",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Vibostolimab Coformulated with Pembrolizumab Plus Chemotherapy as First-Line Therapy for Extensive-Stage Small-Cell Lung Cancer.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Lung"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": null,
+      "histology": "SCLC",
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42900351-abstract",
+        "version": "83a3567227811d0eedc87a0b0bc7019116c2cd6a3815af14c877483a52c0c388",
+        "claim_text": "Given the overall benefit/risk profile, treatment with vibostolimab/pembrolizumab was discontinued.",
+        "source_id": "pmid:42900351",
+        "source_version": "29912521e6fb80f07d6f6d1b80ad02bf8b15ca124e71d99c0d5e61508a00e4bc",
+        "supporting_passage": "Given the overall benefit/risk profile, treatment with vibostolimab/pembrolizumab was discontinued.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "87af584a433018f4f8d27fb919d5494726f816bf50c3becb2f9f17fbf8b5e725"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42900351",
+        "version": "29912521e6fb80f07d6f6d1b80ad02bf8b15ca124e71d99c0d5e61508a00e4bc",
+        "title": "Vibostolimab Coformulated with Pembrolizumab Plus Chemotherapy as First-Line Therapy for Extensive-Stage Small-Cell Lung Cancer.",
+        "source_name": "Targeted oncology",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42900351/",
+        "original_url": "https://doi.org/10.1007/s11523-026-01237-w",
+        "source_type": "journal",
+        "published_date": "2026-10-20",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:34.143774+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "87af584a433018f4f8d27fb919d5494726f816bf50c3becb2f9f17fbf8b5e725",
+        "supporting_passage": "Given the overall benefit/risk profile, treatment with vibostolimab/pembrolizumab was discontinued.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1007/s11523-026-01237-w",
+          "pmid": "42900351"
+        },
+        "study_ids": [
+          "NCT05224141"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "46d214dd-e008-4aa0-a888-730f5257eb3b",
+        "family_hint": "Lung",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "pmid": "42900351",
+        "doi": "10.1007/s11523-026-01237-w",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42802176",
+    "version": "7b0951aa9c4727e2aaf2a3f959828b19907e8f8ca2cefa8fa20b6629536bd2ac",
+    "title": "Disitamab vedotin for HER2-positive breast cancer with liver metastases: phase 3 results from the RC48-C006 phase 2/3 trial.",
+    "cancer_families": [
+      "Breast"
+    ],
+    "specialties": [
+      "Medical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Antibody-drug conjugates"
+    ],
+    "subtypes": [],
+    "study_ids": [
+      "NCT03500380"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": null,
+      "definition_id": "eligibility-pmid-42802176",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Disitamab vedotin for HER2-positive breast cancer with liver metastases: phase 3 results from the RC48-C006 phase 2/3 trial.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Breast"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase 3",
+      "histology": null,
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42802176-abstract",
+        "version": "39d5afeb3c94326174e6aa9971b78317718411a29f20158b1ec877571dd048f9",
+        "claim_text": "Prespecified subgroup analysis of PFS consistently favored DV.",
+        "source_id": "pmid:42802176",
+        "source_version": "a00a510f9b79134a588adc5866d685c7445535ed83c377fa7dff542c35f86246",
+        "supporting_passage": "Prespecified subgroup analysis of PFS consistently favored DV.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "aa2a009bd2f9d238e1962c5da9f4859a669f412e5b9147d687110cbcaeb1f99c"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42802176",
+        "version": "a00a510f9b79134a588adc5866d685c7445535ed83c377fa7dff542c35f86246",
+        "title": "Disitamab vedotin for HER2-positive breast cancer with liver metastases: phase 3 results from the RC48-C006 phase 2/3 trial.",
+        "source_name": "Nature communications",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42802176/",
+        "original_url": "https://doi.org/10.1038/s41467-026-75733-y",
+        "source_type": "journal",
+        "published_date": "2026-08-27",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:39.825477+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "cc by-nc-nd",
+        "language": "eng",
+        "source_hash": "aa2a009bd2f9d238e1962c5da9f4859a669f412e5b9147d687110cbcaeb1f99c",
+        "supporting_passage": "Prespecified subgroup analysis of PFS consistently favored DV.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1038/s41467-026-75733-y",
+          "pmid": "42802176"
+        },
+        "study_ids": [
+          "NCT03500380"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "b8e135b7-66a5-47f1-b287-9bca53718de8",
+        "family_hint": "Breast",
+        "publication_types": [
+          "Clinical Trial, Phase III",
+          "Clinical Trial, Phase II",
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Journal Article"
+        ],
+        "pmid": "42802176",
+        "doi": "10.1038/s41467-026-75733-y",
+        "pmcid": "PMC13616963"
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42913944",
+    "version": "daaab67bee241ff0a2519d549520acc9f65b87789c5eeabe0147e73dfbaf6ade",
+    "title": "Carbon ion radiotherapy for non-metastatic pancreatic cancer: final results of the prospective phase 2 PACK-study (NCT04194268).",
+    "cancer_families": [
+      "Pancreas"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Radiation oncology"
+    ],
+    "topics": [
+      "Clinical trials"
+    ],
+    "subtypes": [],
+    "study_ids": [
+      "unresolved-report:42913944"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": null,
+      "definition_id": "eligibility-pmid-42913944",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Carbon ion radiotherapy for non-metastatic pancreatic cancer: final results of the prospective phase 2 PACK-study (NCT04194268).",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Pancreas"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase 2",
+      "histology": null,
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42913944-abstract",
+        "version": "fcc8bc1cb911e04b44bb06b9c413c927745363c093b1590fea1d8792fb417f77",
+        "claim_text": "Conclusion Chemoradiation with carbon ions demonstrated encouraging overall survival and acceptable toxicity in non-metastatic pancreatic cancer patients.",
+        "source_id": "pmid:42913944",
+        "source_version": "1f83b7683b4b331cd0c10a06eb810d427c65dc36f6406d60f9fe9395ae94995b",
+        "supporting_passage": "Conclusion Chemoradiation with carbon ions demonstrated encouraging overall survival and acceptable toxicity in non-metastatic pancreatic cancer patients.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "0d2648ab12dfb21f80b554379e456f4c12a6c9c43113beee97923e4260921b4e"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42913944",
+        "version": "1f83b7683b4b331cd0c10a06eb810d427c65dc36f6406d60f9fe9395ae94995b",
+        "title": "Carbon ion radiotherapy for non-metastatic pancreatic cancer: final results of the prospective phase 2 PACK-study (NCT04194268).",
+        "source_name": "Radiotherapy and oncology : journal of the European Society for Therapeutic Radiology and Oncology",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42913944/",
+        "original_url": "https://doi.org/10.1016/j.radonc.2026.111836",
+        "source_type": "journal",
+        "published_date": "2026-10-22",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:41.719011+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "cc by-nc",
+        "language": "eng",
+        "source_hash": "0d2648ab12dfb21f80b554379e456f4c12a6c9c43113beee97923e4260921b4e",
+        "supporting_passage": "Conclusion Chemoradiation with carbon ions demonstrated encouraging overall survival and acceptable toxicity in non-metastatic pancreatic cancer patients.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1016/j.radonc.2026.111836",
+          "pmid": "42913944"
+        },
+        "study_ids": [],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "ab229961-58a7-47bb-9d11-dc6fdfcfb98f",
+        "family_hint": "Pancreas",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "pmid": "42913944",
+        "doi": "10.1016/j.radonc.2026.111836",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42675036",
+    "version": "a30e6866673632be49f13c2f7327cfe5389f93b7a12808afa0b1fcb77d274a2f",
+    "title": "First-line anlotinib versus bevacizumab plus CapeOX in RAS/BRAF wild-type unresectable metastatic colorectal cancer (ANCHOR): a multicenter, prospective, randomized, phase 3 trial.",
+    "cancer_families": [
+      "Colorectal"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Surgical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Targeted therapy"
+    ],
+    "subtypes": [],
+    "study_ids": [
+      "NCT04854668"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": null,
+      "definition_id": "eligibility-pmid-42675036",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: First-line anlotinib versus bevacizumab plus CapeOX in RAS/BRAF wild-type unresectable metastatic colorectal cancer (ANCHOR): a multicenter, prospective, randomized, phase 3 trial.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Colorectal"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase 3",
+      "histology": null,
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42675036-abstract",
+        "version": "bfff6272147a03d9837794a8efcd43f2ee8dcf11a8eb64d78d78aa0f3fb27fdc",
+        "claim_text": "The primary endpoint was progression-free survival (PFS) assessed by an independent review committee in the intention-to-treat population.",
+        "source_id": "pmid:42675036",
+        "source_version": "0de49cf7f206d2e04e66b73719c50be7d352afb514e2ce578a06ea64c9189879",
+        "supporting_passage": "The primary endpoint was progression-free survival (PFS) assessed by an independent review committee in the intention-to-treat population.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "66e317b29bf7d5c76713158cf722b573156024bf19ef2cbd83bf1db5e06be69b"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42675036",
+        "version": "0de49cf7f206d2e04e66b73719c50be7d352afb514e2ce578a06ea64c9189879",
+        "title": "First-line anlotinib versus bevacizumab plus CapeOX in RAS/BRAF wild-type unresectable metastatic colorectal cancer (ANCHOR): a multicenter, prospective, randomized, phase 3 trial.",
+        "source_name": "Signal transduction and targeted therapy",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42675036/",
+        "original_url": "https://doi.org/10.1038/s41392-026-02938-4",
+        "source_type": "journal",
+        "published_date": "2026-09-01",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:47.567502+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "cc by-nc-nd",
+        "language": "eng",
+        "source_hash": "66e317b29bf7d5c76713158cf722b573156024bf19ef2cbd83bf1db5e06be69b",
+        "supporting_passage": "The primary endpoint was progression-free survival (PFS) assessed by an independent review committee in the intention-to-treat population.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1038/s41392-026-02938-4",
+          "pmid": "42675036"
+        },
+        "study_ids": [
+          "NCT04854668"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "fab90d08-1319-43d6-84fa-fe4f02c73585",
+        "family_hint": "Colorectal",
+        "publication_types": [
+          "Clinical Trial, Phase III",
+          "research-article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Journal Article"
+        ],
+        "pmid": "42675036",
+        "doi": "10.1038/s41392-026-02938-4",
+        "pmcid": "PMC13530150"
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42926136",
+    "version": "f9aa15667fe8303f158a75fc134cc68e512955157951022080c67d6e04133581",
+    "title": "Relatlimab plus nivolumab versus nivolumab for advanced melanoma: 5-year survival and biomarker analyses of the phase 3 RELATIVITY-047 trial.",
+    "cancer_families": [
+      "Other"
+    ],
+    "specialties": [
+      "Medical oncology"
+    ],
+    "topics": [
+      "Clinical trials",
+      "Immunotherapy"
+    ],
+    "subtypes": [],
+    "study_ids": [
+      "NCT03470922"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": null,
+      "definition_id": "eligibility-pmid-42926136",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Relatlimab plus nivolumab versus nivolumab for advanced melanoma: 5-year survival and biomarker analyses of the phase 3 RELATIVITY-047 trial.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Other"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase 3",
+      "histology": null,
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42926136-abstract",
+        "version": "e7b275b007e4c1672ad7d84bfce8e3121640e7d15da7d24af1951976c8f5560b",
+        "claim_text": "The addition of relatlimab to nivolumab was associated with a lower prevalence of primary resistance than nivolumab alone.",
+        "source_id": "pmid:42926136",
+        "source_version": "aca32b4d040c30be01ee5ca1fb71c7e087a3192e772c9d5f907d70ec9af18344",
+        "supporting_passage": "The addition of relatlimab to nivolumab was associated with a lower prevalence of primary resistance than nivolumab alone.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "f86f1e2f40ecf484f5972876e396e2ed369e89760e678da19834b7978266ab24"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42926136",
+        "version": "aca32b4d040c30be01ee5ca1fb71c7e087a3192e772c9d5f907d70ec9af18344",
+        "title": "Relatlimab plus nivolumab versus nivolumab for advanced melanoma: 5-year survival and biomarker analyses of the phase 3 RELATIVITY-047 trial.",
+        "source_name": "Nature medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42926136/",
+        "original_url": "https://doi.org/10.1038/s41591-026-04756-1",
+        "source_type": "journal",
+        "published_date": "2026-10-24",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:49.445852+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "f86f1e2f40ecf484f5972876e396e2ed369e89760e678da19834b7978266ab24",
+        "supporting_passage": "The addition of relatlimab to nivolumab was associated with a lower prevalence of primary resistance than nivolumab alone.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1038/s41591-026-04756-1",
+          "pmid": "42926136"
+        },
+        "study_ids": [
+          "NCT03470922"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "b1c94001-eac7-41f2-8fe6-0035b6720cd5",
+        "family_hint": "Other",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "pmid": "42926136",
+        "doi": "10.1038/s41591-026-04756-1",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42901168",
+    "version": "a23efc87222a96da406e5f11f40fe80283ab104d843d10fb488655deda9a6656",
+    "title": "Systemic antitumor responses to hypofractionated radiotherapy plus Poly(I:C) in advanced hepatocellular carcinoma: A phase 2 trial.",
+    "cancer_families": [
+      "Liver"
+    ],
+    "specialties": [
+      "Medical oncology",
+      "Radiation oncology"
+    ],
+    "topics": [
+      "Clinical trials"
+    ],
+    "subtypes": [],
+    "study_ids": [
+      "unresolved-report:42901168"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": null,
+      "definition_id": "eligibility-pmid-42901168",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Systemic antitumor responses to hypofractionated radiotherapy plus Poly(I:C) in advanced hepatocellular carcinoma: A phase 2 trial.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Liver"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase 2",
+      "histology": null,
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42901168-abstract",
+        "version": "909cafd28c4274fa748cb177e5dcbbef2d4d21b049ff032267695f5740022149",
+        "claim_text": "Funding The National Natural Science Foundation of China.",
+        "source_id": "pmid:42901168",
+        "source_version": "c827d7a2fa930f7f4c63fcc7392264de45223b1e9016b1a739f962f84d493fb9",
+        "supporting_passage": "Funding The National Natural Science Foundation of China.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "20c01d1d4e5f79e42f6492d723e106e0b2541fbdd62fdf5f6c07fd2f01b677ca"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42901168",
+        "version": "c827d7a2fa930f7f4c63fcc7392264de45223b1e9016b1a739f962f84d493fb9",
+        "title": "Systemic antitumor responses to hypofractionated radiotherapy plus Poly(I:C) in advanced hepatocellular carcinoma: A phase 2 trial.",
+        "source_name": "Med (New York, N.Y.)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42901168/",
+        "original_url": "https://doi.org/10.1016/j.medj.2026.101331",
+        "source_type": "journal",
+        "published_date": "2026-10-20",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:43.766621+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "20c01d1d4e5f79e42f6492d723e106e0b2541fbdd62fdf5f6c07fd2f01b677ca",
+        "supporting_passage": "Funding The National Natural Science Foundation of China.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1016/j.medj.2026.101331",
+          "pmid": "42901168"
+        },
+        "study_ids": [],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "4590fed0-cb96-4f1d-ab4c-a966565b58ae",
+        "family_hint": "Liver",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "pmid": "42901168",
+        "doi": "10.1016/j.medj.2026.101331",
+        "pmcid": null
+      }
+    ]
+  },
+  {
+    "id": "evidence-pmid-42600610",
+    "version": "732a74c471f588195dfdc85e27774039254531c7f2b2d3e30882fd4507f0790e",
+    "title": "Adjuvant oxaliplatin with S-1 (SOX) versus S-1 for stage II-III gastric cancer (CAPITAL): A randomized, open-label, phase 3 trial.",
+    "cancer_families": [
+      "Gastric"
+    ],
+    "specialties": [
+      "Medical oncology"
+    ],
+    "topics": [
+      "Clinical trials"
+    ],
+    "subtypes": [],
+    "study_ids": [
+      "NCT01795027"
+    ],
+    "evidence_type": "original research report; design pending review",
+    "population": {
+      "id": null,
+      "definition_id": "eligibility-pmid-42600610",
+      "version": "definition.v1",
+      "inclusion": "Population as named in report title: Adjuvant oxaliplatin with S-1 (SOX) versus S-1 for stage II-III gastric cancer (CAPITAL): A randomized, open-label, phase 3 trial.",
+      "exclusion": "Not established from retained excerpt; do not infer exclusions.",
+      "predicates": {
+        "cancer_family": "Gastric"
+      },
+      "required_fields": [
+        "histology",
+        "stage",
+        "biomarkers",
+        "treatment_history",
+        "performance_status"
+      ],
+      "denominator": "Unknown; current patient-mix aliases provide cohort relevance only.",
+      "unknowns": [
+        "Full trial inclusion/exclusion criteria not acquired",
+        "No compatible denominator or exact eligibility estimate"
+      ]
+    },
+    "details": {
+      "phase": "phase 3",
+      "histology": null,
+      "stage": null,
+      "biomarker": null,
+      "treatment_line": null,
+      "previous_therapies": null,
+      "progression_requirement": null,
+      "intervention": null,
+      "comparator": null,
+      "geography": null,
+      "sample_size": null,
+      "endpoints": [],
+      "maturity": null
+    },
+    "funding": "Unknown; requires verification in original funding/conflict disclosure.",
+    "conflicts": "Unknown; original disclosures not acquired.",
+    "regulatory": {
+      "jurisdiction": "US",
+      "as_of": "2026-10-30",
+      "status": "Not assessed; publication does not establish regulatory approval.",
+      "source_id": null
+    },
+    "limitations": [
+      "Pending human clinical review; deterministic excerpt selection is not clinical verification.",
+      "Limited abstract excerpt only; full text, supplementary eligibility, funding and regulatory status require review.",
+      "No numeric efficacy estimates extracted; endpoints, arms, time point and maturity remain unverified."
+    ],
+    "status_flags": [
+      "pending human review",
+      "abstract-only acquisition",
+      "approval status not assessed"
+    ],
+    "synthetic": false,
+    "claims": [
+      {
+        "id": "claim-pmid-42600610-abstract",
+        "version": "8aafe47fa5f5bb4fc7067d9c8aa7ec3cc7d174142695b4032d4a58009195de67",
+        "claim_text": "The primary endpoint was overall survival.",
+        "source_id": "pmid:42600610",
+        "source_version": "6043d03abe6f78ff3e82f6cbf0bec9351d5b4039ff4f8d6ebf53384e89693c50",
+        "supporting_passage": "The primary endpoint was overall survival.",
+        "location": "Abstract; exact limited excerpt",
+        "effect": null,
+        "extraction": {
+          "method": "deterministic-limited-excerpt.v1",
+          "model": null,
+          "prompt_version": "no-llm.v1",
+          "schema_version": "kb-claim.v1",
+          "input_hash": "d3e853c428c8ed554cdd34dc1e4f8b6d9e0ce9530c93c09f59bf565f3dcaeccc"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "pmid:42600610",
+        "version": "6043d03abe6f78ff3e82f6cbf0bec9351d5b4039ff4f8d6ebf53384e89693c50",
+        "title": "Adjuvant oxaliplatin with S-1 (SOX) versus S-1 for stage II-III gastric cancer (CAPITAL): A randomized, open-label, phase 3 trial.",
+        "source_name": "Med (New York, N.Y.)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42600610/",
+        "original_url": "https://doi.org/10.1016/j.medj.2026.101258",
+        "source_type": "journal",
+        "published_date": "2026-08-14",
+        "presentation_date": null,
+        "registry_updated_at": null,
+        "retrieved_at": "2026-10-31T03:31:45.647527+00:00",
+        "access": "metadata and limited abstract excerpt; no full text acquired",
+        "license": "not established; no full-text redistribution",
+        "language": "eng",
+        "source_hash": "d3e853c428c8ed554cdd34dc1e4f8b6d9e0ce9530c93c09f59bf565f3dcaeccc",
+        "supporting_passage": "The primary endpoint was overall survival.",
+        "location": "Abstract; exact limited excerpt",
+        "identifiers": {
+          "doi": "10.1016/j.medj.2026.101258",
+          "pmid": "42600610"
+        },
+        "study_ids": [
+          "NCT01795027"
+        ],
+        "connector": "europe-pmc.core.v1",
+        "acquisition_run": "47d2c2cd-5e91-4238-a15f-86c4833c81cc",
+        "family_hint": "Gastric",
+        "publication_types": [
+          "Clinical Trial, Phase III",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Journal Article"
+        ],
+        "pmid": "42600610",
+        "doi": "10.1016/j.medj.2026.101258",
+        "pmcid": null
+      }
+    ]
+  }
+]

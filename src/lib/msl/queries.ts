@@ -6,6 +6,11 @@ export const doctorQuery = queryOptions({
   queryKey: ["doctor"],
   queryFn: api.fetchDoctor,
 });
+export const newsletterStatusQuery = queryOptions({
+  queryKey: ["newsletterStatus"],
+  queryFn: () => api.fetchNewsletterStatus(),
+  refetchInterval: 15000,
+});
 
 export const patientMixQuery = (code: string | null | undefined) =>
   queryOptions({
@@ -43,3 +48,20 @@ export function useToggleBookmark() {
     onSettled: () => qc.invalidateQueries({ queryKey: ["bookmarks"] }),
   });
 }
+
+export const generatedProfileQuery = queryOptions({
+  queryKey: ["generatedProfile"],
+  queryFn: api.fetchGeneratedProfile,
+  staleTime: 0,
+  refetchOnMount: "always",
+  refetchInterval: (query) => {
+    const status = query.state.data?.status;
+    return status === "queued" || status === "processing" ? 5000 : 30000;
+  },
+});
+
+export const hospitalDirectoryQuery = queryOptions({
+  queryKey: ["hospitalDirectory"],
+  queryFn: api.fetchHospitalDirectory,
+  refetchInterval: 15000,
+});

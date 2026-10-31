@@ -1,0 +1,73 @@
+{
+  "verified_at": "2026-10-31T03:43:08.437Z",
+  "workspace": "7474660613250664",
+  "table": "workspace.msl_demo.kb_records",
+  "records": [
+    [
+      "acquisition_run",
+      "14"
+    ],
+    [
+      "audit",
+      "3"
+    ],
+    [
+      "candidate_set",
+      "1"
+    ],
+    [
+      "claim",
+      "21"
+    ],
+    [
+      "document",
+      "23"
+    ],
+    [
+      "evidence_item",
+      "21"
+    ],
+    [
+      "item_taxonomy",
+      "111"
+    ],
+    [
+      "population",
+      "21"
+    ],
+    [
+      "release",
+      "1"
+    ],
+    [
+      "source_registry",
+      "4"
+    ],
+    [
+      "study",
+      "22"
+    ],
+    [
+      "study_report",
+      "23"
+    ],
+    [
+      "taxonomy",
+      "1"
+    ]
+  ],
+  "duplicate_keys": 0,
+  "append_only": [
+    [
+      "delta.appendOnly",
+      "true"
+    ]
+  ],
+  "actual_matcher_matches_for_synthetic_input": 0,
+  "release": {
+    "revision": "89312ebe-fb56-4858-98b8-62cbfa0305d2",
+    "version": "kb-397404dd8e9883e092893f895a8c778fb67c7964aadf6734ab2b9b33500d2e72",
+    "published": true,
+    "items": 0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "verified_at": "2026-10-31T05:06:17.424Z",
+  "origin": "http://localhost:8081",
+  "mode": "read-only-live-Databricks-through-authenticated-local-review-API",
+  "counts": {
+    "pending": 21,
+    "approved": 0,
+    "rejected": 0
+  },
+  "candidate_count": 21,
+  "current_release": {
+    "version": "kb-397404dd8e9883e092893f895a8c778fb67c7964aadf6734ab2b9b33500d2e72",
+    "revision": "89312ebe-fb56-4858-98b8-62cbfa0305d2",
+    "published": true,
+    "item_count": 0
+  },
+  "preview_item_count": 0,
+  "preview_excluded_count": 21,
+  "review_decisions_written": 0,
+  "clinical_releases_published": 0,
+  "checks": [
+    "anonymous denied",
+    "dedicated reviewer signed in",
+    "canonical list/detail read",
+    "canonical preview validated",
+    "foreign origin denied",
+    "review page HTTP 200",
+    "fenced immutable MERGE analyzed via EXPLAIN only (no write)"
+  ]
+}

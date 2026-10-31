@@ -12,9 +12,22 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as HospitalRouteImport } from './routes/hospital'
+import { Route as PatientSyncRouteImport } from './routes/patient-sync'
+import { Route as ReviewRouteImport } from './routes/review'
 import { Route as AuthenticatedOnboardedRouteRouteImport } from './routes/_authenticated/_onboarded/route'
 import { Route as AuthenticatedOnboardingRouteImport } from './routes/_authenticated/onboarding'
+import { Route as ApiAppRouteImport } from './routes/api.app'
+import { Route as ApiHospitalRouteImport } from './routes/api.hospital'
+import { Route as ApiReviewRouteImport } from './routes/api.review'
 import { Route as AuthenticatedOnboardedProfileRouteImport } from './routes/_authenticated/_onboarded/profile'
+import { Route as ApiDeliveryRunRouteImport } from './routes/api.delivery.run'
+import { Route as ApiEmailGmailWebhookRouteImport } from './routes/api.email.gmail-webhook'
+import { Route as ApiEmailUnsubscribeRouteImport } from './routes/api.email.unsubscribe'
+import { Route as ApiGmailNotificationsRunRouteImport } from './routes/api.gmail-notifications.run'
+import { Route as ApiMatchingRunRouteImport } from './routes/api.matching.run'
+import { Route as ApiNewsletterRunRouteImport } from './routes/api.newsletter.run'
+import { Route as ApiProfilingRunRouteImport } from './routes/api.profiling.run'
 import { Route as AuthenticatedOnboardedLibraryIndexRouteImport } from './routes/_authenticated/_onboarded/library/index'
 import { Route as AuthenticatedOnboardedLibraryArticlesIdRouteImport } from './routes/_authenticated/_onboarded/library/articles/$id'
 import { Route as AuthenticatedOnboardedLibraryNewslettersIdRouteImport } from './routes/_authenticated/_onboarded/library/newsletters/$id'
@@ -33,6 +46,21 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HospitalRoute = HospitalRouteImport.update({
+  id: '/hospital',
+  path: '/hospital',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientSyncRoute = PatientSyncRouteImport.update({
+  id: '/patient-sync',
+  path: '/patient-sync',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewRoute = ReviewRouteImport.update({
+  id: '/review',
+  path: '/review',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedOnboardedRouteRoute =
   AuthenticatedOnboardedRouteRouteImport.update({
     id: '/_onboarded',
@@ -43,12 +71,63 @@ const AuthenticatedOnboardingRoute = AuthenticatedOnboardingRouteImport.update({
   path: '/onboarding',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const ApiAppRoute = ApiAppRouteImport.update({
+  id: '/api/app',
+  path: '/api/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiHospitalRoute = ApiHospitalRouteImport.update({
+  id: '/api/hospital',
+  path: '/api/hospital',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiReviewRoute = ApiReviewRouteImport.update({
+  id: '/api/review',
+  path: '/api/review',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedOnboardedProfileRoute =
   AuthenticatedOnboardedProfileRouteImport.update({
     id: '/profile',
     path: '/profile',
     getParentRoute: () => AuthenticatedOnboardedRouteRoute,
   } as any)
+const ApiDeliveryRunRoute = ApiDeliveryRunRouteImport.update({
+  id: '/api/delivery/run',
+  path: '/api/delivery/run',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiEmailGmailWebhookRoute = ApiEmailGmailWebhookRouteImport.update({
+  id: '/api/email/gmail-webhook',
+  path: '/api/email/gmail-webhook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiEmailUnsubscribeRoute = ApiEmailUnsubscribeRouteImport.update({
+  id: '/api/email/unsubscribe',
+  path: '/api/email/unsubscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiGmailNotificationsRunRoute =
+  ApiGmailNotificationsRunRouteImport.update({
+    id: '/api/gmail-notifications/run',
+    path: '/api/gmail-notifications/run',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiMatchingRunRoute = ApiMatchingRunRouteImport.update({
+  id: '/api/matching/run',
+  path: '/api/matching/run',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiNewsletterRunRoute = ApiNewsletterRunRouteImport.update({
+  id: '/api/newsletter/run',
+  path: '/api/newsletter/run',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiProfilingRunRoute = ApiProfilingRunRouteImport.update({
+  id: '/api/profiling/run',
+  path: '/api/profiling/run',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedOnboardedLibraryIndexRoute =
   AuthenticatedOnboardedLibraryIndexRouteImport.update({
     id: '/library/',
@@ -71,8 +150,21 @@ const AuthenticatedOnboardedLibraryNewslettersIdRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/hospital': typeof HospitalRoute
+  '/patient-sync': typeof PatientSyncRoute
+  '/review': typeof ReviewRoute
   '/onboarding': typeof AuthenticatedOnboardingRoute
+  '/api/app': typeof ApiAppRoute
+  '/api/hospital': typeof ApiHospitalRoute
+  '/api/review': typeof ApiReviewRoute
   '/profile': typeof AuthenticatedOnboardedProfileRoute
+  '/api/delivery/run': typeof ApiDeliveryRunRoute
+  '/api/email/gmail-webhook': typeof ApiEmailGmailWebhookRoute
+  '/api/email/unsubscribe': typeof ApiEmailUnsubscribeRoute
+  '/api/gmail-notifications/run': typeof ApiGmailNotificationsRunRoute
+  '/api/matching/run': typeof ApiMatchingRunRoute
+  '/api/newsletter/run': typeof ApiNewsletterRunRoute
+  '/api/profiling/run': typeof ApiProfilingRunRoute
   '/library/': typeof AuthenticatedOnboardedLibraryIndexRoute
   '/library/articles/$id': typeof AuthenticatedOnboardedLibraryArticlesIdRoute
   '/library/newsletters/$id': typeof AuthenticatedOnboardedLibraryNewslettersIdRoute
@@ -80,8 +172,21 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/hospital': typeof HospitalRoute
+  '/patient-sync': typeof PatientSyncRoute
+  '/review': typeof ReviewRoute
   '/onboarding': typeof AuthenticatedOnboardingRoute
+  '/api/app': typeof ApiAppRoute
+  '/api/hospital': typeof ApiHospitalRoute
+  '/api/review': typeof ApiReviewRoute
   '/profile': typeof AuthenticatedOnboardedProfileRoute
+  '/api/delivery/run': typeof ApiDeliveryRunRoute
+  '/api/email/gmail-webhook': typeof ApiEmailGmailWebhookRoute
+  '/api/email/unsubscribe': typeof ApiEmailUnsubscribeRoute
+  '/api/gmail-notifications/run': typeof ApiGmailNotificationsRunRoute
+  '/api/matching/run': typeof ApiMatchingRunRoute
+  '/api/newsletter/run': typeof ApiNewsletterRunRoute
+  '/api/profiling/run': typeof ApiProfilingRunRoute
   '/library': typeof AuthenticatedOnboardedLibraryIndexRoute
   '/library/articles/$id': typeof AuthenticatedOnboardedLibraryArticlesIdRoute
   '/library/newsletters/$id': typeof AuthenticatedOnboardedLibraryNewslettersIdRoute
@@ -91,9 +196,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/hospital': typeof HospitalRoute
+  '/patient-sync': typeof PatientSyncRoute
+  '/review': typeof ReviewRoute
   '/_authenticated/_onboarded': typeof AuthenticatedOnboardedRouteRouteWithChildren
   '/_authenticated/onboarding': typeof AuthenticatedOnboardingRoute
+  '/api/app': typeof ApiAppRoute
+  '/api/hospital': typeof ApiHospitalRoute
+  '/api/review': typeof ApiReviewRoute
   '/_authenticated/_onboarded/profile': typeof AuthenticatedOnboardedProfileRoute
+  '/api/delivery/run': typeof ApiDeliveryRunRoute
+  '/api/email/gmail-webhook': typeof ApiEmailGmailWebhookRoute
+  '/api/email/unsubscribe': typeof ApiEmailUnsubscribeRoute
+  '/api/gmail-notifications/run': typeof ApiGmailNotificationsRunRoute
+  '/api/matching/run': typeof ApiMatchingRunRoute
+  '/api/newsletter/run': typeof ApiNewsletterRunRoute
+  '/api/profiling/run': typeof ApiProfilingRunRoute
   '/_authenticated/_onboarded/library/': typeof AuthenticatedOnboardedLibraryIndexRoute
   '/_authenticated/_onboarded/library/articles/$id': typeof AuthenticatedOnboardedLibraryArticlesIdRoute
   '/_authenticated/_onboarded/library/newsletters/$id': typeof AuthenticatedOnboardedLibraryNewslettersIdRoute
@@ -103,8 +221,21 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/auth'
+    | '/hospital'
+    | '/patient-sync'
+    | '/review'
     | '/onboarding'
+    | '/api/app'
+    | '/api/hospital'
+    | '/api/review'
     | '/profile'
+    | '/api/delivery/run'
+    | '/api/email/gmail-webhook'
+    | '/api/email/unsubscribe'
+    | '/api/gmail-notifications/run'
+    | '/api/matching/run'
+    | '/api/newsletter/run'
+    | '/api/profiling/run'
     | '/library/'
     | '/library/articles/$id'
     | '/library/newsletters/$id'
@@ -112,8 +243,21 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/auth'
+    | '/hospital'
+    | '/patient-sync'
+    | '/review'
     | '/onboarding'
+    | '/api/app'
+    | '/api/hospital'
+    | '/api/review'
     | '/profile'
+    | '/api/delivery/run'
+    | '/api/email/gmail-webhook'
+    | '/api/email/unsubscribe'
+    | '/api/gmail-notifications/run'
+    | '/api/matching/run'
+    | '/api/newsletter/run'
+    | '/api/profiling/run'
     | '/library'
     | '/library/articles/$id'
     | '/library/newsletters/$id'
@@ -122,9 +266,22 @@ export interface FileRouteTypes {
     | '/'
     | '/_authenticated'
     | '/auth'
+    | '/hospital'
+    | '/patient-sync'
+    | '/review'
     | '/_authenticated/_onboarded'
     | '/_authenticated/onboarding'
+    | '/api/app'
+    | '/api/hospital'
+    | '/api/review'
     | '/_authenticated/_onboarded/profile'
+    | '/api/delivery/run'
+    | '/api/email/gmail-webhook'
+    | '/api/email/unsubscribe'
+    | '/api/gmail-notifications/run'
+    | '/api/matching/run'
+    | '/api/newsletter/run'
+    | '/api/profiling/run'
     | '/_authenticated/_onboarded/library/'
     | '/_authenticated/_onboarded/library/articles/$id'
     | '/_authenticated/_onboarded/library/newsletters/$id'
@@ -134,6 +291,19 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
+  HospitalRoute: typeof HospitalRoute
+  PatientSyncRoute: typeof PatientSyncRoute
+  ReviewRoute: typeof ReviewRoute
+  ApiAppRoute: typeof ApiAppRoute
+  ApiHospitalRoute: typeof ApiHospitalRoute
+  ApiReviewRoute: typeof ApiReviewRoute
+  ApiDeliveryRunRoute: typeof ApiDeliveryRunRoute
+  ApiEmailGmailWebhookRoute: typeof ApiEmailGmailWebhookRoute
+  ApiEmailUnsubscribeRoute: typeof ApiEmailUnsubscribeRoute
+  ApiGmailNotificationsRunRoute: typeof ApiGmailNotificationsRunRoute
+  ApiMatchingRunRoute: typeof ApiMatchingRunRoute
+  ApiNewsletterRunRoute: typeof ApiNewsletterRunRoute
+  ApiProfilingRunRoute: typeof ApiProfilingRunRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -159,6 +329,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/hospital': {
+      id: '/hospital'
+      path: '/hospital'
+      fullPath: '/hospital'
+      preLoaderRoute: typeof HospitalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient-sync': {
+      id: '/patient-sync'
+      path: '/patient-sync'
+      fullPath: '/patient-sync'
+      preLoaderRoute: typeof PatientSyncRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/review': {
+      id: '/review'
+      path: '/review'
+      fullPath: '/review'
+      preLoaderRoute: typeof ReviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated/_onboarded': {
       id: '/_authenticated/_onboarded'
       path: ''
@@ -173,12 +364,82 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedOnboardingRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/api/app': {
+      id: '/api/app'
+      path: '/api/app'
+      fullPath: '/api/app'
+      preLoaderRoute: typeof ApiAppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/hospital': {
+      id: '/api/hospital'
+      path: '/api/hospital'
+      fullPath: '/api/hospital'
+      preLoaderRoute: typeof ApiHospitalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/review': {
+      id: '/api/review'
+      path: '/api/review'
+      fullPath: '/api/review'
+      preLoaderRoute: typeof ApiReviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated/_onboarded/profile': {
       id: '/_authenticated/_onboarded/profile'
       path: '/profile'
       fullPath: '/profile'
       preLoaderRoute: typeof AuthenticatedOnboardedProfileRouteImport
       parentRoute: typeof AuthenticatedOnboardedRouteRoute
+    }
+    '/api/delivery/run': {
+      id: '/api/delivery/run'
+      path: '/api/delivery/run'
+      fullPath: '/api/delivery/run'
+      preLoaderRoute: typeof ApiDeliveryRunRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/email/gmail-webhook': {
+      id: '/api/email/gmail-webhook'
+      path: '/api/email/gmail-webhook'
+      fullPath: '/api/email/gmail-webhook'
+      preLoaderRoute: typeof ApiEmailGmailWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/email/unsubscribe': {
+      id: '/api/email/unsubscribe'
+      path: '/api/email/unsubscribe'
+      fullPath: '/api/email/unsubscribe'
+      preLoaderRoute: typeof ApiEmailUnsubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/gmail-notifications/run': {
+      id: '/api/gmail-notifications/run'
+      path: '/api/gmail-notifications/run'
+      fullPath: '/api/gmail-notifications/run'
+      preLoaderRoute: typeof ApiGmailNotificationsRunRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/matching/run': {
+      id: '/api/matching/run'
+      path: '/api/matching/run'
+      fullPath: '/api/matching/run'
+      preLoaderRoute: typeof ApiMatchingRunRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/newsletter/run': {
+      id: '/api/newsletter/run'
+      path: '/api/newsletter/run'
+      fullPath: '/api/newsletter/run'
+      preLoaderRoute: typeof ApiNewsletterRunRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/profiling/run': {
+      id: '/api/profiling/run'
+      path: '/api/profiling/run'
+      fullPath: '/api/profiling/run'
+      preLoaderRoute: typeof ApiProfilingRunRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_authenticated/_onboarded/library/': {
       id: '/_authenticated/_onboarded/library/'
@@ -245,6 +506,19 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
+  HospitalRoute: HospitalRoute,
+  PatientSyncRoute: PatientSyncRoute,
+  ReviewRoute: ReviewRoute,
+  ApiAppRoute: ApiAppRoute,
+  ApiHospitalRoute: ApiHospitalRoute,
+  ApiReviewRoute: ApiReviewRoute,
+  ApiDeliveryRunRoute: ApiDeliveryRunRoute,
+  ApiEmailGmailWebhookRoute: ApiEmailGmailWebhookRoute,
+  ApiEmailUnsubscribeRoute: ApiEmailUnsubscribeRoute,
+  ApiGmailNotificationsRunRoute: ApiGmailNotificationsRunRoute,
+  ApiMatchingRunRoute: ApiMatchingRunRoute,
+  ApiNewsletterRunRoute: ApiNewsletterRunRoute,
+  ApiProfilingRunRoute: ApiProfilingRunRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

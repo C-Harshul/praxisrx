@@ -30,3 +30,21 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Server configuration and credentials (the example contains names/placeholders only)
+.env
+.env.*
+!.env.example
+demo-credentials.local
+reviewer-credentials.local
+.databrickscfg
+*.pem
+*.key
+
+# Private/generated outputs; keep curated KB provenance and explicit synthetic fixtures
+artifacts/
+coverage/
+__pycache__/
+*.py[cod]
+# Pre-existing duplicate generated tree; canonical routeTree.gen.ts remains available
+src/routeTree.gen 2.ts

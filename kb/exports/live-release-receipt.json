@@ -1,0 +1,11 @@
+{
+  "verified_at": "2026-10-31T03:38:18.297Z",
+  "workspace_id": "7474660613250664",
+  "record_type": "kb_release",
+  "id": "published",
+  "revision": "89312ebe-fb56-4858-98b8-62cbfa0305d2",
+  "version": "kb-397404dd8e9883e092893f895a8c778fb67c7964aadf6734ab2b9b33500d2e72",
+  "payload_hash": "516715e9480d686b605cc36c8a7f55e09fba9b7247c2da781e7b7625ec116fe3",
+  "items": 0,
+  "status": "canonical-published-readback-verified"
+}

@@ -1,0 +1,125 @@
+# Newsletter generation and Gmail delivery
+
+Implemented locally, 31 October 2026. This component now owns independent persisted generation, canonical publication, subscriptions, Gmail outbox/reconciliation and authenticated notification handling. It does not fabricate a reviewed release or recipients. Default mode is **no-send preview**.
+
+## What was verified
+
+- Read the designated Databricks workspace `7474660613250664`, existing warehouse `bccde8ce8d366533` and `workspace.msl_demo.app_state` through the authorized `msl-canonical` CLI/API path. The approved clinical KB pointer was published but had **zero items** at verification. No fixture or human approval was inserted to unblock it.
+- Verified the endpoint metadata for `databricks-gpt-oss-20b`: Databricks-managed `system.ai.gpt-oss-20b`, chat task, ready/non-updating, one approved entity and no external routing/fallback. A separate newsletter capability smoke test selected fixture claim IDs using structured JSON and passed the deterministic gate. This workload approves exact-claim selection, not unrestricted clinical paraphrasing.
+- Generated `artifacts/newsletter-preview/preview.html`, `preview.txt` and `verification.json` using that live Databricks model with an explicitly synthetic, nonclinical fixture. The receipt records model/config, token usage and latency, zero Gmail calls and no clinical publication. HTML structure/escaping was checked with DOM tests; browser visual inspection was unavailable because local-file navigation was blocked by browser policy.
+- Unit/integration tests simulate canonical CAS and provider failures; they are not live email tests. No Gmail OAuth credential, Google project, mailbox watch, authorized recipient or hosted scheduler was provisioned or exercised. The final read-only canonical check also found zero confirmed doctor profiles and zero matching packages; doctor confirmation remains required. No email is claimed accepted or delivered.
+
+## Runtime and canonical records
+
+Active code is under `src/lib/msl/newsletter/` and `src/lib/msl/delivery/`. It uses the existing app-server single writer and doctor-document revision CAS, not Supabase or local-file authority. Additive fields on `msl-app-state.v1` are initialized on first use:
+
+| Field / record           | Version and ownership                                                                                                                                                                           |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `doctor.newsletter_jobs` | `newsletter-jobs.v1`: one stable generation ID per doctor/matching run; status, bounded attempts, lease, retry time, input hash, model/prompt/schema/gate/hosting provenance and preview result |
+| `doctor.newsletters[]`   | `newsletter.v1` provenance with validated articles/citations and explicit `publication.status: published`; existing library/bookmark shape retained                                             |
+| `doctor.email_delivery`  | `email-delivery.v1`: canonical recipient metadata, subscription version, frozen email tasks, attempts, provider IDs and reviewed outcomes                                                       |
+| `email_mailbox/gmail`    | `gmail-mailbox.v1` in the same canonical table: deduplicated authenticated notifications, history/page checkpoints, watch expiry, conflicts and quarantined report IDs                          |
+
+The raw verified delivery address is owner-scoped canonical recipient data, not a model input. The server registry is an additional explicit send allowlist; it cannot authorize sending until the same ID/version/address/verification/authorization metadata is published canonically. OAuth tokens, passwords, signing secrets and client secrets remain server secrets, never domain payloads or browser data.
+
+The current consumer also defers while `kb_write_lock` is present, including an unresolved expired fence; only the governed KB writer clears/replaces it. A stale unpublished matching run becomes due for rematching when its pointer revision changes, so a completed review does not strand an unsent generation package for a week. This does not change already-published newsletter cadence.
+
+Generation and delivery do not call each other. Matching/hospital uploads never call inference or Gmail. A scheduler or local runner independently invokes each worker; communication occurs only through canonical state. `changeDoctor` stores an operation receipt in the same audit append, then rereads it to reconcile an ambiguous commit. Lost claims cannot trigger an external call unless the lease was acknowledged. CAS conflicts fail visibly for refresh/retry.
+
+Generation states are queued/processing/retry/published/preview/empty/failed/superseded. Five-minute leases recover abandoned work. At most three draft attempts, each with a 60-second model timeout and 6,000 output-token limit, are permitted. Retry delays are one and two minutes before the remaining attempts. Per-doctor generation serialization plus a current suppression check before publication prevent overlapping drafts publishing the same items. A stale package is superseded. Empty approved matches record an empty cycle without inference or content.
+
+The app checks up to twelve ranked items per newsletter and caps the model input at 60 KB. Remaining evidence stays unsuppressed for a later cycle. The canonical store enforces its existing 2 MB doctor-document limit. Jobs/tasks are also capped at 100 each, with at most five send attempts and 100 outcome events per task. The mailbox caps 500 notifications, 100 reports/conflicts and 1 MB. These bounds fail visibly and require governed archival; no automatic deletion or unlimited embedded-history growth is introduced. `newsletter_status` exposes the current document byte size. Published content is not duplicated in the finished generation job.
+
+## Clinical and citation strategy
+
+The model gets only selected cancer/topic interests and reviewed item-scoped claim IDs/text. It gets no names, email addresses, doctor codes, patient records, aggregate percentages or hospital assignments. Research text is untrusted data in the prompt and never grants authority or executes code.
+
+The model selects/organizes claims through a strict schema. **Clinical prose is rendered from the exact human-reviewed claim wording.** Free-text fields, invented numbers, unknown/cross-item IDs, changed cohort values and incomplete output are rejected. Paragraphs and summaries receive deterministic numbered citations with source/claim IDs, versions, HTTPS URL, supporting passage and location. The profile/mix/KB/input/model/prompt/schema/gate versions and approved release membership are retained in publication provenance.
+
+Titles/digest use neutral deterministic editorial text, avoiding uncited clinical conclusions. Eligibility is shown only when the exact reviewed eligibility statement has a supplied claim; otherwise the app explicitly says full eligibility is unspecified. Exclusions are explicitly unknown in this v1 contract rather than invented. Every non-unknown funding/status disclosure must itself be an exact approved claim; a release that supplies only uncited disclosure metadata fails preparation until the KB owner supplies the claim. Unknown funding is stated as missing supplied information. Full article pages expose supporting passages as well as links.
+
+Frozen previews are checked again before promotion, and frozen clinical content is checked before sending. Exact copying and ID validation do **not** establish scientific truth or source entailment. That remains the human KB review responsibility. Readability depends on concise, complete reviewed claims; this conservative version does not claim validated free-form simplification. Structured exclusions and more expressive editorial drafting require a coordinated reviewed contract revision.
+
+## Publication and validity
+
+`generationContext` uses the actual `readCurrentRankedPackage`, requires a clinical canonical manifest/hash and complete review/source/claim version membership, and recomputes matching against the canonical release. It rejects edited saved evidence rather than trusting a stale package. Canonical failures propagate with no fixture fallback.
+
+After inference the worker rereads the package, then uses a doctor CAS to commit the validated newsletter, articles, citation provenance, publication marker, audit and delivery task together. This is the only suppression event. Drafts and previews do not enter the published library or suppress evidence. Stable generation/newsletter/article IDs make ambiguous retries recoverable; delivery retries never regenerate content. A configured transport and canonically verified/authorized recipient are required to promote a preview to publication in this implementation. Email subscription is separate: an unsubscribed or suppressed recipient can still receive the in-app publication, with a cancelled email task and no send.
+
+The KB pointer is separate from the doctor row. It is checked before and after publication and again immediately before sending; changes hold sending. Doctor CAS prevents overwriting concurrent profile/hospital/consent updates. There is **no distributed transaction** across KB, doctor and Gmail, and a change after the final send authorization cannot recall a request already accepted by Google. Existing historical library content is not automatically recalled; provenance and source versions remain reconstructable. Do not claim end-to-end retraction recall or exact-once email transport.
+
+## Email and subscription behavior
+
+HTML and plain text are rendered from an explicit email-safe DTO. Source text is escaped, links require HTTPS without embedded credentials, and article URLs are normal `/library/articles/:id` links requiring the app's doctor session and ownership checks. No login tokens are embedded. Email contains general reviewed study findings/disclosures, never doctor-specific cohort percentages/counts/labels, applicability badges, hospital assignments or individual patient records. The renderer never accepts a whole doctor document or matching package.
+
+The Library now shows preparation/delivery states, a separate preview section and subscription controls. No synthetic sign-in address is reused as a delivery address. A trusted operator first verifies the exact recipient and publishes recipient metadata; the doctor then explicitly subscribes. Default subscription is unsubscribed. Frequency is the stated profile's Weekly or Every two weeks. Scheduling uses elapsed seven/fourteen-day intervals with an explicit **UTC default**, not an inferred doctor timezone. Delivery also throttles against the previous accepted send, so an early profile update cannot bypass cadence. Changing profile/consent invalidates incompatible pending work. Unsubscribe cancels unstarted work; resubscription does not restart cancelled backlog.
+
+Signed unsubscribe capabilities contain only scope, canonical IDs/address version and expiry. GET shows a confirmation page; POST changes state idempotently, including Gmail one-click list-unsubscribe. The token grants only unsubscribe, not reading or login. Use a dedicated 32+ character secret; a previous key is supported during rotation. Unsubscribe persists before success. It cannot clear a hard-bounce/complaint suppression.
+
+## Gmail outcomes and limitations
+
+The user selected Gmail API, so there is no paid transactional-email account or provider fallback. OAuth uses the selected sender's `gmail.send` and `gmail.readonly` scopes. Sending verifies that the authenticated mailbox equals the configured sender. The task freezes its render/hash, recipient version/fingerprint, sender fingerprint, Date and RFC Message-ID before sending. A final canonical subscription/recipient/profile/snapshot/evidence check runs after mailbox preparation and immediately before `messages.send`. Signed Pub/Sub configuration and an acknowledged, unexpired canonical mailbox watch are also required by the send gate.
+
+| State                                  | Meaning                                                                                                             |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `preview`                              | Rendered without a Gmail call, clinical publication or suppression                                                  |
+| `queued` / `sending`                   | Durable intent / acknowledged leased attempt; neither claims acceptance                                             |
+| `provider-accepted`                    | Positive Gmail send response or a correlated message confirmed in Gmail Sent; not confirmed recipient delivery      |
+| `unknown`                              | Send timeout, malformed/lost response or abandoned send lease; may have been sent                                   |
+| `delivered` / `bounced` / `complained` | Explicit reviewed, correlated outcome evidence; not inferred from Gmail mailbox notifications                       |
+| `failed`                               | Definitive rejection or exhausted safe retries                                                                      |
+| `cancelled` / `held`                   | Unsubscribe/revocation, changed validity/identity, missing configuration or unresolved review; no new provider call |
+
+Gmail does not offer a send idempotency key. The persisted logical key is an application identity, **not** a Gmail deduplication guarantee. Explicit rate-limit rejections may retry the same frozen newsletter, at most five attempts within 24 hours of its scheduled send window, with bounded 1m/5m/30m/2h backoff. Timeouts/server errors and uncertain responses enter `unknown`; an expired send lease does too. At most five hourly reconciliation checks search Sent by the frozen RFC Message-ID and verify the returned message header/SENT label. A positive match establishes acceptance only. Missing results never authorize a resend. After the bound the task stays visibly unknown for operator resolution. A stable Message-ID alone does not prevent Gmail duplicates.
+
+Google-signed Pub/Sub OIDC notifications are validated against Google's fixed key endpoint, RS256 signature, issuer, expected audience, verified service-account identity and token lifetime. Subscription/mailbox identities are checked. Canonical message-ID/hash deduplication precedes acknowledgment; conflicting identities are quarantined. Mailbox history pages/checkpoints are durable and monotonic; stale concurrent completions cannot roll them back. Watch renewal preserves the existing history checkpoint. Failed persistence returns a retryable response rather than losing the event.
+
+**Gmail provides mailbox-change notifications, not transactional delivered/bounced/complaint webhooks.** Reports are quarantined for review; matching a report to a frozen Message-ID/recipient conservatively suppresses further sending pending review. A forged report cannot automatically mark a newsletter delivered. A designated human can inspect the actual Gmail report and attest authenticity/correlation using `review-gmail-report.ts`; only explicit evidence records those outcome states. Ordinary opens, sent labels and notification arrival are never delivery evidence. Positive delivery receipts and complaints may never be available with Gmail. If automated verified delivery/complaint SLAs become mandatory, Gmail alone has that provider capability gap; do not hide it by inventing callbacks.
+
+## Local setup: keep no-send mode until configured
+
+Node 24 and the existing `tsx` dependency are used. Existing Databricks/app settings remain as in `DOCTOR-PROFILING.md`. New setting names are in `.env.example`; keep actual values in ignored mode-0600 local files or a server secret manager. No secrets belong in browser `VITE_*` variables, Git, chat or canonical payloads.
+
+1. Create/select your Google Cloud project and enable Gmail API. Configure OAuth consent and a Web application OAuth client with the exact local callback `http://127.0.0.1:8484/oauth/gmail`. For development, explicitly add the sender account as an allowed test user where Google requires it. Configure `GMAIL_CLIENT_ID` and `GMAIL_CLIENT_SECRET` in `.env.local`. The scripts do not create accounts, enable billing or accept terms.
+2. Run `node --env-file=.env.local --import tsx scripts/authorize-gmail.ts`. Open the printed official Google authorization URL yourself and review the send/read scopes. On successful authorization the local callback exchanges the code using state/PKCE and saves `.env.gmail.local` with refresh token and the **actual authenticated** sender address, mode 0600. It sends no mail. Existing files are preserved unless `--replace` is intentionally supplied. Hosted deployment uses a suitable registered callback/secret-management workflow; do not expose the local setup server publicly.
+3. Create a Pub/Sub topic/subscription in the same Google project used for Gmail watch. Grant Gmail's documented publishing identity access to the topic. Configure an authenticated HTTPS push subscription using a designated service account and exact audience `https://YOUR_APP_ORIGIN/api/email/gmail-webhook`. Set `GMAIL_PUBSUB_TOPIC`, `GMAIL_PUBSUB_SUBSCRIPTION`, `GMAIL_PUBSUB_AUDIENCE` and `GMAIL_PUBSUB_SERVICE_ACCOUNT_EMAIL`. Provision only the required Google grants after reviewing them; no script grants broad cloud access.
+4. Provision the small canonical inbox once using `node --env-file=.env.local --env-file=.env.gmail.local --import tsx scripts/setup-gmail.ts`. Then use the same command with `--watch`. Setup never sends email. Use one setup writer. The notification worker renews watches with less than a day remaining; Google history expiration still requires explicit resynchronization/review. A history 404 is quarantined rather than silently skipping lost events.
+5. Configure a random `EMAIL_UNSUBSCRIBE_SECRET` (32+ characters), HTTPS `APP_ORIGIN`, and the server `EMAIL_RECIPIENTS_JSON` registry. Each entry is `{doctor_id,id,email,version,verified_at,authorized_at,modes:["test" or "live"]}`. IDs are UUIDs; timestamps must reflect actual verification and authorization, never invented attestation. All addresses in fixtures are `example.invalid`. Replace them only with an explicitly authorized verified real recipient. Keep recipient versions immutable; change version for any changed address or revoked authorization.
+6. Publish that exact recipient metadata with `node --env-file=.env.local --env-file=.env.gmail.local --import tsx scripts/configure-email-recipient.ts DOCTOR_UUID --attest-verified-and-authorized`. This is an explicit administrator attestation, not an email-verification service. It does not subscribe the doctor. Revoke via the same command plus `--revoke`; a revoked version cannot be silently republished. Verification can be established through your existing account-ownership process or direct recipient confirmation; the application does not pretend that a synthetic login proves ownership of a real inbox.
+7. The doctor signs in and subscribes from Library. Set `EMAIL_MODE=test` and `EMAIL_SEND_ENABLED=true` only after the exact recipient is authorized for a real test. Gmail has **no sandbox**: test mode also sends real email, restricted to registry entries whose canonical modes include `test`. For normal sending, use `EMAIL_MODE=live` and explicit `live` authorization. Merely configuring OAuth does not authorize any recipient. Keep the default `preview`/false until these steps are complete.
+8. Run `npm run dev:email -- --port 8081 --strictPort` and separately `npm run workers:email`. These load both ignored environment files. For local preview without public HTTPS origin, keep preview mode; article links use `https://example.invalid` in the generated demonstration. Real mail requires the app's actual HTTPS origin and normal account sign-in.
+
+## Preview and verification commands
+
+```sh
+# No network, no provider, no canonical clinical publication:
+npm run preview:newsletter
+
+# Explicit verified Databricks inference over the synthetic fixture, still no Gmail/publishing:
+node --env-file=.env.local --import tsx scripts/preview-newsletter.ts --live-model
+
+# Read-only canonical release/profile/package/doc-size inspection; sending forced off:
+node --env-file=.env.local --import tsx scripts/check-newsletter-live.ts
+
+# Optional canonical empty-cycle execution; refuses a nonempty clinical release:
+node --env-file=.env.local --import tsx scripts/check-newsletter-live.ts --process-empty
+
+npm test
+npx tsc --noEmit
+npm run check:newsletter-scripts
+npm run build
+```
+
+Do not run the optional empty-cycle command as a substitute for the doctor's profile confirmation. It cannot confirm profiles or publish fixtures. The synthetic preview file uses `example.invalid` sources and is not research. Offline worker integration tests simulate the complete generation → preview/promotion → canonical publication/outbox → Gmail acceptance/reconciliation path with mocked CAS and transport; no real recipient is contacted by tests.
+
+## Hosted operation and recovery
+
+Configure restricted Databricks service credentials, Gmail OAuth secrets and the registry on the server. Host the Node app at its configured HTTPS origin. Independently schedule authenticated POSTs with the existing cron bearer secret to `/api/profiling/run`, `/api/matching/run`, `/api/newsletter/run`, `/api/delivery/run` and `/api/gmail-notifications/run`. The Gmail webhook is public but Google-authenticated; unsubscribe is public but capability-scoped. Default GET-only cron does not invoke these workers. Model requests need at least a 60-second provider timeout plus metadata verification/canonical SQL overhead; use a background/Node host with sufficient request duration rather than assuming a short serverless limit will suffice.
+
+Inspect Library's preparation/delivery state and canonical job/task safe errors. Library offers a safe email retry only for definitive failed/held attempts within the original time/attempt bounds, with no prior acceptance or ambiguity; it preserves the same frozen newsletter/key. Keep publication, API acceptance, confirmed delivery and authenticated in-app `article_opened` audit activity distinct. Email failure does not remove library publication or release suppression. Reading never gates delivery-worker completion. A preview is promotable only while inputs remain current; configured authorized recipients may promote it using the saved gated content without another LLM call. Failed drafts stop at three attempts; fix/update the reviewed inputs/profile to create a fresh matching version rather than resetting bounds silently.
+
+Uncertain sends must not be manually requeued under a new key. Reconcile the existing task with Sent first. A missing sent-mail result does not prove absence. Resolve held/unknown tasks deliberately; no exactly-once transport is promised. If a Gmail report is quarantined, a designated `EMAIL_DELIVERY_REVIEWER` may prepare a JSON file `{doctor_id,task_id,report_id,outcome:"delivered"|"bounced"|"complained"|"no_terminal_outcome",reviewer,authenticity_verified:true,recipient_and_original_message_verified:true}` after inspecting the actual report. Run `scripts/review-gmail-report.ts PATH` with the same server environment. It rereads Gmail, requires correlated original Message-ID/recipient and the reported outcome, and records the source hash/reviewer. Never attest a report merely to make the demo green. Bounces/complaints suppress further sends. A reviewed delivered report or explicit `no_terminal_outcome` finding clears only a temporary pending-report hold to **unsubscribed**, cancels the held backlog and requires a new doctor opt-in. It cannot clear a bounce/complaint suppression. No automatic resubscription occurs.
+
+Archival, an external production identity provider, Google OAuth/project review and production Google/Databricks grants are deployment responsibilities. Existing live records are not migrated or deleted by this component. No active Supabase path is restored.
+
+Primary implementation references: [Gmail send/MIME](https://developers.google.com/workspace/gmail/api/guides/sending), [Gmail send API](https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/send), [Gmail push/watch](https://developers.google.com/workspace/gmail/api/guides/push), [Gmail errors](https://developers.google.com/workspace/gmail/api/guides/handle-errors), [Google authenticated Pub/Sub push](https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions). These describe provider behavior; the recorded receipt and tests describe what this implementation actually verified.

@@ -10,7 +10,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { supabase } from "@/integrations/supabase/client";
+
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -130,15 +130,15 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const router = useRouter();
+  const isHospitalPortal = router.state.location.pathname === "/hospital" || router.state.location.pathname === "/patient-sync";
 
   useEffect(() => {
-    const { data } = supabase.auth.onAuthStateChange((event) => {
-      if (event !== "SIGNED_IN" && event !== "SIGNED_OUT" && event !== "USER_UPDATED") return;
-      router.invalidate();
-      if (event !== "SIGNED_OUT") queryClient.invalidateQueries();
-    });
-    return () => data.subscription.unsubscribe();
-  }, [router, queryClient]);
+    // Hospital staff have their own session; the local simulator needs no doctor auth.
+    if (isHospitalPortal) return;
+    const changed = () => { router.invalidate(); queryClient.clear(); };
+    window.addEventListener("msl-auth-changed", changed);
+    return () => window.removeEventListener("msl-auth-changed", changed);
+  }, [router, queryClient, isHospitalPortal]);
 
   return (
     <QueryClientProvider client={queryClient}>

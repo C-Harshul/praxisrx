@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": { "types": ["node", "vite/client"] },
+  "include": [
+    "authorize-gmail.ts",
+    "setup-gmail.ts",
+    "review-gmail-report.ts",
+    "configure-email-recipient.ts",
+    "preview-newsletter.ts",
+    "check-newsletter-live.ts",
+    "fixtures/*.ts"
+  ]
+}
