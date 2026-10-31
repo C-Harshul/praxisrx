@@ -14,7 +14,7 @@ export type OnboardingDraft = {
   linked: boolean;
 };
 
-export type StepErrors = Partial<Record<keyof OnboardingDraft, string>>;
+export type StepErrors = { [K in keyof OnboardingDraft]?: string | undefined };
 
 /** Validation for each onboarding step. Returns an empty object when valid. */
 export function validateStep(step: number, d: OnboardingDraft): StepErrors {

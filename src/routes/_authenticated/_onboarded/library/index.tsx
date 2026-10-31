@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/_authenticated/_onboarded/library/")({
   validateSearch: (s: Record<string, unknown>): { tab?: "all" | "bookmarked" } =>
-    s.tab === "bookmarked" ? { tab: "bookmarked" } : {},
+    s["tab"] === "bookmarked" ? { tab: "bookmarked" } : {},
   head: () => ({
     meta: [
       { title: "Library — MSL" },

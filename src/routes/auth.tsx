@@ -47,7 +47,7 @@ function AuthPage() {
     setError(null);
     const parsed = schema.safeParse({ email, password });
     if (!parsed.success) {
-      setError(parsed.error.issues[0].message);
+      setError(parsed.error.issues[0]?.message ?? "Check your details.");
       return;
     }
     setBusy(true);

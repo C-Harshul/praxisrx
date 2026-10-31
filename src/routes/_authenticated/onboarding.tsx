@@ -34,10 +34,11 @@ import { cn } from "@/lib/utils";
 
 type OnboardingSearch = { step?: number; from?: "review" | "profile" };
 function validateOnboardingSearch(s: Record<string, unknown>): OnboardingSearch {
-  const n = Number(s.step);
+  const n = Number(s["step"]);
   const out: OnboardingSearch = {};
   if (Number.isInteger(n) && n >= 1 && n <= 5) out.step = n;
-  if (s.from === "review" || s.from === "profile") out.from = s.from;
+  const f = s["from"];
+  if (f === "review" || f === "profile") out.from = f;
   return out;
 }
 
@@ -109,8 +110,7 @@ function OnboardingPage() {
     setDraft((d) => ({ ...d, [k]: v }));
     setErrors((e) => ({ ...e, [k]: undefined, linked: undefined }));
   };
-  const goStep = (n: number, keepFrom = false) =>
-    navigate({ search: { step: n, from: keepFrom ? from : undefined } });
+  const goStep = (n: number) => navigate({ search: { step: n } });
 
   async function next() {
     const errs = validateStep(step, draft);
@@ -185,7 +185,7 @@ function OnboardingPage() {
   }
 
   const progress = (step / ONBOARDING_STEPS.length) * 100;
-  const current = ONBOARDING_STEPS[step - 1];
+  const current = ONBOARDING_STEPS[step - 1] ?? ONBOARDING_STEPS[0];
   const preview = linkPreview ?? (draft.linked ? (existingMix?.aggregates as Record<string, number> | undefined) : undefined);
 
   return (
@@ -334,7 +334,7 @@ function OnboardingPage() {
   );
 }
 
-function Field({ label, htmlFor, error, required, children }: { label: string; htmlFor: string; error?: string; required?: boolean; children: React.ReactNode }) {
+function Field({ label, htmlFor, error, required, children }: { label: string; htmlFor: string; error?: string | undefined; required?: boolean; children: React.ReactNode }) {
   return (
     <div className="space-y-2">
       <Label htmlFor={htmlFor}>
