@@ -1,6 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { z } from "zod";
 import { format } from "date-fns";
 import { Bookmark, ChevronRight, Inbox } from "lucide-react";
 import { bookmarksQuery, newslettersQuery } from "@/lib/msl/queries";
@@ -9,7 +8,8 @@ import { EmptyState, ErrorBlock, LoadingBlock } from "@/components/msl/States";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/_authenticated/_onboarded/library/")({
-  validateSearch: z.object({ tab: z.enum(["all", "bookmarked"]).catch("all").default("all") }),
+  validateSearch: (s: Record<string, unknown>): { tab?: "all" | "bookmarked" } =>
+    s.tab === "bookmarked" ? { tab: "bookmarked" } : {},
   head: () => ({
     meta: [
       { title: "Library — MSL" },
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/_authenticated/_onboarded/library/")({
 });
 
 function LibraryPage() {
-  const { tab } = Route.useSearch();
+  const tab = Route.useSearch().tab ?? "all";
   const navigate = useNavigate({ from: "/library/" });
   const tabs = [
     { id: "all", label: "All newsletters" },
@@ -40,7 +40,7 @@ function LibraryPage() {
             key={t.id}
             role="tab"
             aria-selected={tab === t.id}
-            onClick={() => navigate({ search: { tab: t.id } })}
+            onClick={() => navigate({ search: t.id === "all" ? {} : { tab: t.id } })}
             className={cn(
               "-mb-px border-b-2 pb-3 text-sm font-medium transition-colors",
               tab === t.id ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground",

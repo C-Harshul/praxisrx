@@ -3,7 +3,6 @@ import { useQuery, useQueryClient, useSuspenseQuery } from "@tanstack/react-quer
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, CheckCircle2, Link2, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
-import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -33,13 +32,17 @@ import {
 } from "@/lib/msl/options";
 import { cn } from "@/lib/utils";
 
-const searchSchema = z.object({
-  step: z.coerce.number().int().min(1).max(5).catch(1),
-  from: z.enum(["review", "profile"]).optional().catch(undefined),
-});
+type OnboardingSearch = { step?: number; from?: "review" | "profile" };
+function validateOnboardingSearch(s: Record<string, unknown>): OnboardingSearch {
+  const n = Number(s.step);
+  const out: OnboardingSearch = {};
+  if (Number.isInteger(n) && n >= 1 && n <= 5) out.step = n;
+  if (s.from === "review" || s.from === "profile") out.from = s.from;
+  return out;
+}
 
 export const Route = createFileRoute("/_authenticated/onboarding")({
-  validateSearch: searchSchema,
+  validateSearch: validateOnboardingSearch,
   head: () => ({
     meta: [
       { title: "Set up your briefing — MSL" },
@@ -85,7 +88,9 @@ function toUpdate(d: OnboardingDraft): DoctorProfileUpdate {
 }
 
 function OnboardingPage() {
-  const { step, from } = Route.useSearch();
+  const search = Route.useSearch();
+  const step = search.step ?? 1;
+  const from = search.from;
   const navigate = useNavigate({ from: "/onboarding" });
   const qc = useQueryClient();
   const { data: doctor } = useSuspenseQuery(doctorQuery);

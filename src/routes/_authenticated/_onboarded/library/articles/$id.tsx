@@ -92,7 +92,7 @@ function ArticlePage() {
           <ArrowLeft className="h-4 w-4" /> {data.newsletters.title}
         </Link>
       ) : (
-        <Link to="/library" search={{ tab: "all" }} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
+        <Link to="/library" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
           <ArrowLeft className="h-4 w-4" /> Library
         </Link>
       )}

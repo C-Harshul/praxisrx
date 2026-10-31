@@ -10,33 +10,130 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AuthenticatedOnboardedRouteRouteImport } from './routes/_authenticated/_onboarded/route'
+import { Route as AuthenticatedOnboardingRouteImport } from './routes/_authenticated/onboarding'
+import { Route as AuthenticatedOnboardedProfileRouteImport } from './routes/_authenticated/_onboarded/profile'
+import { Route as AuthenticatedOnboardedLibraryIndexRouteImport } from './routes/_authenticated/_onboarded/library/index'
+import { Route as AuthenticatedOnboardedLibraryArticlesIdRouteImport } from './routes/_authenticated/_onboarded/library/articles/$id'
+import { Route as AuthenticatedOnboardedLibraryNewslettersIdRouteImport } from './routes/_authenticated/_onboarded/library/newsletters/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedOnboardedRouteRoute =
+  AuthenticatedOnboardedRouteRouteImport.update({
+    id: '/_onboarded',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedOnboardingRoute = AuthenticatedOnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedOnboardedProfileRoute =
+  AuthenticatedOnboardedProfileRouteImport.update({
+    id: '/profile',
+    path: '/profile',
+    getParentRoute: () => AuthenticatedOnboardedRouteRoute,
+  } as any)
+const AuthenticatedOnboardedLibraryIndexRoute =
+  AuthenticatedOnboardedLibraryIndexRouteImport.update({
+    id: '/library/',
+    path: '/library/',
+    getParentRoute: () => AuthenticatedOnboardedRouteRoute,
+  } as any)
+const AuthenticatedOnboardedLibraryArticlesIdRoute =
+  AuthenticatedOnboardedLibraryArticlesIdRouteImport.update({
+    id: '/library/articles/$id',
+    path: '/library/articles/$id',
+    getParentRoute: () => AuthenticatedOnboardedRouteRoute,
+  } as any)
+const AuthenticatedOnboardedLibraryNewslettersIdRoute =
+  AuthenticatedOnboardedLibraryNewslettersIdRouteImport.update({
+    id: '/library/newsletters/$id',
+    path: '/library/newsletters/$id',
+    getParentRoute: () => AuthenticatedOnboardedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/onboarding': typeof AuthenticatedOnboardingRoute
+  '/profile': typeof AuthenticatedOnboardedProfileRoute
+  '/library/': typeof AuthenticatedOnboardedLibraryIndexRoute
+  '/library/articles/$id': typeof AuthenticatedOnboardedLibraryArticlesIdRoute
+  '/library/newsletters/$id': typeof AuthenticatedOnboardedLibraryNewslettersIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/onboarding': typeof AuthenticatedOnboardingRoute
+  '/profile': typeof AuthenticatedOnboardedProfileRoute
+  '/library': typeof AuthenticatedOnboardedLibraryIndexRoute
+  '/library/articles/$id': typeof AuthenticatedOnboardedLibraryArticlesIdRoute
+  '/library/newsletters/$id': typeof AuthenticatedOnboardedLibraryNewslettersIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/_authenticated/_onboarded': typeof AuthenticatedOnboardedRouteRouteWithChildren
+  '/_authenticated/onboarding': typeof AuthenticatedOnboardingRoute
+  '/_authenticated/_onboarded/profile': typeof AuthenticatedOnboardedProfileRoute
+  '/_authenticated/_onboarded/library/': typeof AuthenticatedOnboardedLibraryIndexRoute
+  '/_authenticated/_onboarded/library/articles/$id': typeof AuthenticatedOnboardedLibraryArticlesIdRoute
+  '/_authenticated/_onboarded/library/newsletters/$id': typeof AuthenticatedOnboardedLibraryNewslettersIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/onboarding'
+    | '/profile'
+    | '/library/'
+    | '/library/articles/$id'
+    | '/library/newsletters/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/onboarding'
+    | '/profile'
+    | '/library'
+    | '/library/articles/$id'
+    | '/library/newsletters/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/auth'
+    | '/_authenticated/_onboarded'
+    | '/_authenticated/onboarding'
+    | '/_authenticated/_onboarded/profile'
+    | '/_authenticated/_onboarded/library/'
+    | '/_authenticated/_onboarded/library/articles/$id'
+    | '/_authenticated/_onboarded/library/newsletters/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +145,106 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/_onboarded': {
+      id: '/_authenticated/_onboarded'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedOnboardedRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/onboarding': {
+      id: '/_authenticated/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof AuthenticatedOnboardingRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/_onboarded/profile': {
+      id: '/_authenticated/_onboarded/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof AuthenticatedOnboardedProfileRouteImport
+      parentRoute: typeof AuthenticatedOnboardedRouteRoute
+    }
+    '/_authenticated/_onboarded/library/': {
+      id: '/_authenticated/_onboarded/library/'
+      path: '/library'
+      fullPath: '/library/'
+      preLoaderRoute: typeof AuthenticatedOnboardedLibraryIndexRouteImport
+      parentRoute: typeof AuthenticatedOnboardedRouteRoute
+    }
+    '/_authenticated/_onboarded/library/articles/$id': {
+      id: '/_authenticated/_onboarded/library/articles/$id'
+      path: '/library/articles/$id'
+      fullPath: '/library/articles/$id'
+      preLoaderRoute: typeof AuthenticatedOnboardedLibraryArticlesIdRouteImport
+      parentRoute: typeof AuthenticatedOnboardedRouteRoute
+    }
+    '/_authenticated/_onboarded/library/newsletters/$id': {
+      id: '/_authenticated/_onboarded/library/newsletters/$id'
+      path: '/library/newsletters/$id'
+      fullPath: '/library/newsletters/$id'
+      preLoaderRoute: typeof AuthenticatedOnboardedLibraryNewslettersIdRouteImport
+      parentRoute: typeof AuthenticatedOnboardedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedOnboardedRouteRouteChildren {
+  AuthenticatedOnboardedProfileRoute: typeof AuthenticatedOnboardedProfileRoute
+  AuthenticatedOnboardedLibraryIndexRoute: typeof AuthenticatedOnboardedLibraryIndexRoute
+  AuthenticatedOnboardedLibraryArticlesIdRoute: typeof AuthenticatedOnboardedLibraryArticlesIdRoute
+  AuthenticatedOnboardedLibraryNewslettersIdRoute: typeof AuthenticatedOnboardedLibraryNewslettersIdRoute
+}
+
+const AuthenticatedOnboardedRouteRouteChildren: AuthenticatedOnboardedRouteRouteChildren =
+  {
+    AuthenticatedOnboardedProfileRoute: AuthenticatedOnboardedProfileRoute,
+    AuthenticatedOnboardedLibraryIndexRoute:
+      AuthenticatedOnboardedLibraryIndexRoute,
+    AuthenticatedOnboardedLibraryArticlesIdRoute:
+      AuthenticatedOnboardedLibraryArticlesIdRoute,
+    AuthenticatedOnboardedLibraryNewslettersIdRoute:
+      AuthenticatedOnboardedLibraryNewslettersIdRoute,
+  }
+
+const AuthenticatedOnboardedRouteRouteWithChildren =
+  AuthenticatedOnboardedRouteRoute._addFileChildren(
+    AuthenticatedOnboardedRouteRouteChildren,
+  )
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedOnboardedRouteRoute: typeof AuthenticatedOnboardedRouteRouteWithChildren
+  AuthenticatedOnboardingRoute: typeof AuthenticatedOnboardingRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedOnboardedRouteRoute:
+    AuthenticatedOnboardedRouteRouteWithChildren,
+  AuthenticatedOnboardingRoute: AuthenticatedOnboardingRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
